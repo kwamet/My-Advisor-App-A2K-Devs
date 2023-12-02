@@ -74,7 +74,7 @@ def add_course_to_student_route():
     if course_code in completed_courses and grade < 50:
         updateGrade(student_id, course_code, grade)
         return jsonify({'Success': 'Course grade updated'}), 200
-    else:
+    elif course_code in completed_courses and grade >= 50:
         return jsonify({'Error': 'Course already completed'}), 400
         
     addCoursetoHistory(student_id, course_code, grade)
