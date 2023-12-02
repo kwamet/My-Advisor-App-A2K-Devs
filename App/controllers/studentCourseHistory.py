@@ -17,7 +17,7 @@ def addCoursetoHistory(studentid, code):
          
 
 def getCompletedCourses(id):
-    return StudentCourseHistory.query.filter_by(studentID=id).all()
+    return StudentCourseHistory.query.filter(StudentCourseHistory.studentID == id, StudentCourseHistory.grade >= 50)
 
 def getCompletedCourseCodes(id):
     completed = getCompletedCourses(id)
