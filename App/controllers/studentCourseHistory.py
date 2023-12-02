@@ -7,7 +7,7 @@ def addCoursetoHistory(studentid, code):
     if student:
         course = get_course_by_courseCode(code)
         if course:
-            completed = StudentCourseHistory(studentid, code)
+            completed = StudentCourseHistory(studentid, code, score)
             db.session.add(completed)
             db.session.commit()
         else:
@@ -27,3 +27,11 @@ def getCompletedCourseCodes(id):
         codes.append(c.code)
     
     return codes
+
+def updateGrade(id, code, grade):
+    completed = StudentCourseHistory.query.filter_by(studentID=id, code=code).first()
+    if completed:
+        completed.grade = grade
+        db.session.commit()
+    else:
+        print("Course not found")

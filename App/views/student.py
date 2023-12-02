@@ -51,6 +51,7 @@ def create_student_route():
 def add_course_to_student_route():
     student_id = request.json['student_id']
     course_code = request.json['course_code']
+    grade = request.json['grade']
 
     username=current_user.username
     if not verify_student(username):    #verify that the user is logged in
@@ -70,10 +71,13 @@ def add_course_to_student_route():
 
     # Check if the course is already in the student's completed courses
     completed_courses = getCompletedCourseCodes(student_id)
-    if course_code in completed_courses:
+    if course_code in completed_courses and grade < 50:
+        updateGrade(student_id, course_code, grade)
+        return jsonify({'Success': 'Course grade updated'}), 200
+    else:
         return jsonify({'Error': 'Course already completed'}), 400
-
-    addCoursetoHistory(student_id, course_code)
+        
+    addCoursetoHistory(student_id, course_code, grade)
     return jsonify({'Success!': f"Course {course_code} added to student {student_id}'s course history"}), 200
 
 
