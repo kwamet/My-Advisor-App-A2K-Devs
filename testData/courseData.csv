@@ -1,36 +1,1001 @@
-courseCode,courseName,numCredits,rating,preReqs
-COMP1600,Introduction to Computing Concepts,3,4,
-COMP1601,Programming 1,3,1,
-COMP1602,Programming 2,3,4,
-COMP1603,Programming 3,3,3,
-COMP1604,Mathematics for Computing,3,2,
-INFO1600, Introduction to Information Technology Concepts,3,1,
-INFO1601,Introduction to WWW Programming,3,1,
-MATH1115,Fundamental Mathematics for the General Sciences 1,3,1,
-COMP2611,Data Structures,3,5,COMP1602
-COMP2601,Computer Architecture,3,5,COMP1600
-MATH2250,Industrial Statistics,3,4,
-COMP3605,Introduction to Data Analytics,3,3,"COMP2611,MATH2250"
-COMP3610,Big Data Analytics,3,5,COMP3605
-COMP2602,Computer Networks,3,1,COMP1600
-COMP2603,Object-Oriented Programming 1,3,1,COMP1603
-COMP2604,Operating Systems,3,5,COMP1600
-COMP2605,Enterprise Database Systems,3,2,COMP1602
-COMP2606,Software Engineering 1,3,3,COMP1602
-INFO2602,Web Programming and Technologies 1,3,3,INFO1601
-INFO2604,Information Systems Security,3,3,COMP1602
-COMP3601,Design and Analysis of Algorithms,3,5,COMP2611
-COMP3602,Theory of Computing,3,5,COMP1604
-COMP3603,Human-Computer Interaction,3,1,COMP2606
-INFO3604,Project,3,5,"INFO2600,COMP2606"
-FOUN1101,Caribbean Civilization,3,1,
-FOUN1105,Scientific and Technical Writing,3,1,
-FOUN1301,"Law, Governance, Economy and Society",3,1,
-COMP3606,Wireless and Mobile Computing,3,3,"COMP2602,INFO2601"
-COMP3607,Object-Oriented Programming II,3,2,COMP2603
-COMP3608,Intelligent Systems,3,4,"COMP2611,MATH2250"
-COMP3609,Game Programming,3,1,"COMP2603,COMP2606"
-COMP3611,Modelling and Simulation,3,5,MATH2250
-COMP3612,Special Topics in Computer,3,5,"COMP2611,COMP2603"
-COMP3613,Software Engineering 2,3,5,COMP2606
-INFO2606, Internship, 6, 1,
+courseCode,courseName,numCredits,rating,preReqs,semesterOffered,yearOffered
+COMP2602,Software Engineering 1,3,1,COMP1603,3,2021
+COMP2606,Introduction to Data Analytics,3,4,COMP1602,3,2024
+COMP1602,Human-Computer Interaction,3,2,COMP2606,1,2023
+INFO1600,Enterprise Database Systems,3,2,COMP1602,3,2025
+COMP2611,Caribbean Civilization,3,3,COMP3605,2,2024
+MATH2250,Programming 3,3,5,COMP1604,3,2022
+COMP3602,Operating Systems,3,2,COMP1603,3,2021
+INFO1600,Law,3,0,COMP1603,3,2021
+COMP3608,Computer Architecture,3,5,COMP1602,2,2022
+COMP2602,Programming 2,3,0,INFO2601,2,2023
+INFO1600,Theory of Computing,3,3,COMP2611,2,2022
+INFO1600,Introduction to Data Analytics,3,3,COMP1600,3,2025
+COMP3610,Governance,3,2,COMP1600,3,2021
+COMP2603,Programming 3,3,1,COMP1604,3,2022
+FOUN1301,Programming 2,3,4,COMP1602,2,2022
+COMP1600,Human-Computer Interaction,3,1,COMP2606,3,2021
+COMP1602,Introduction to WWW Programming,3,0,COMP1602,1,2025
+COMP1604,Programming 1,3,4,COMP2611,3,2021
+INFO2604,Human-Computer Interaction,3,2,COMP3605,1,2022
+INFO1600,Information Systems Security,3,4,COMP1602,1,2022
+COMP2605,Mathematics for Computing,3,3,COMP1600,2,2023
+INFO1600,Governance,3,5,COMP1603,1,2022
+COMP1601,Project,3,1,COMP1604,1,2022
+COMP1600,Governance,3,0,COMP1604,3,2022
+COMP1600,Computer Networks,3,2,COMP1604,1,2021
+COMP2606,Information Systems Security,3,4,COMP1604,3,2024
+COMP2602,Big Data Analytics,3,2,COMP2606,3,2025
+COMP2605,Intelligent Systems,3,3,COMP2611,1,2023
+COMP2604,Introduction to Data Analytics,3,0,COMP3605,1,2023
+FOUN1105,Industrial Statistics,3,4,COMP1600,3,2021
+COMP2611,Enterprise Database Systems,3,5,INFO2601,3,2022
+COMP1603,Theory of Computing,3,2,MATH2250,1,2021
+COMP2602,Introduction to WWW Programming,3,2,MATH2250,1,2024
+COMP3601,Introduction to Information Technology Concepts,3,2,MATH2250,2,2025
+INFO1600,Introduction to WWW Programming,3,5,COMP1604,2,2022
+COMP3606,Object-Oriented Programming II,3,5,COMP2606,3,2025
+INFO2602,Project,3,4,COMP1604,2,2022
+COMP3609,Caribbean Civilization,3,0,COMP2606,1,2023
+COMP3602,Governance,3,1,COMP1602,3,2023
+FOUN1301,Information Systems Security,3,4,INFO2601,2,2023
+INFO2602,Big Data Analytics,3,2,COMP3605,3,2022
+COMP3602,Object-Oriented Programming 1,3,1,MATH2250,3,2023
+COMP2602,Mathematics for Computing,3,0,COMP2611,3,2024
+INFO1601,Theory of Computing,3,0,COMP3605,1,2021
+MATH2250,Design and Analysis of Algorithms,3,1,COMP2611,3,2025
+INFO1601,Intelligent Systems,3,2,COMP1604,3,2024
+COMP2604,Economy and Society,3,1,COMP1602,3,2024
+COMP3603,Caribbean Civilization,3,0,COMP2611,2,2024
+COMP1601,Theory of Computing,3,3,COMP1602,1,2024
+MATH2250,Fundamental Mathematics for the General Sciences 1,3,3,COMP1600,3,2022
+MATH1115,Programming 3,3,5,INFO2601,1,2024
+INFO2602,Human-Computer Interaction,3,1,COMP1600,1,2024
+COMP3601,Intelligent Systems,3,4,COMP3605,3,2025
+COMP2605,Big Data Analytics,3,4,COMP1604,2,2023
+COMP3603,Caribbean Civilization,3,0,COMP1604,3,2023
+FOUN1105,Operating Systems,3,4,COMP3605,3,2023
+COMP1604,Law,3,2,COMP1600,1,2021
+COMP1603,Computer Networks,3,2,COMP2611,1,2021
+MATH1115,Caribbean Civilization,3,5,COMP1602,1,2022
+MATH1115,Object-Oriented Programming 1,3,3,COMP2606,2,2023
+COMP2605,Caribbean Civilization,3,0,COMP2606,1,2022
+INFO2604,Wireless and Mobile Computing,3,0,COMP1604,3,2024
+COMP2611,Introduction to WWW Programming,3,3,COMP3605,1,2025
+INFO1600,Law,3,2,MATH2250,3,2021
+FOUN1105,Project,3,3,COMP1602,1,2025
+COMP1603,Programming 1,3,5,COMP3605,3,2023
+FOUN1101,Industrial Statistics,3,0,COMP1600,1,2021
+COMP2605,Wireless and Mobile Computing,3,0,COMP2606,1,2023
+INFO1600,Introduction to Information Technology Concepts,3,5,INFO2601,1,2023
+COMP3602,Introduction to Data Analytics,3,1,COMP1600,3,2024
+COMP1601,Introduction to Information Technology Concepts,3,3,COMP1602,1,2023
+INFO1601,Intelligent Systems,3,4,COMP2606,1,2024
+COMP3606,Information Systems Security,3,3,COMP1602,2,2022
+COMP3607,Introduction to Information Technology Concepts,3,4,COMP1600,2,2024
+COMP3605,Economy and Society,3,2,COMP2606,3,2022
+COMP3603,Fundamental Mathematics for the General Sciences 1,3,3,COMP1603,1,2024
+COMP3607,Economy and Society,3,5,COMP2611,1,2021
+COMP2603,Object-Oriented Programming II,3,3,COMP2611,1,2023
+COMP3603,Fundamental Mathematics for the General Sciences 1,3,3,COMP1603,2,2023
+COMP2601,Object-Oriented Programming 1,3,1,COMP2606,3,2024
+INFO3604,Introduction to Data Analytics,3,3,COMP1602,2,2021
+MATH1115,Project,3,5,COMP1602,1,2025
+INFO2602,Information Systems Security,3,1,COMP2606,1,2023
+FOUN1101,Information Systems Security,3,5,MATH2250,1,2022
+COMP3608,Mathematics for Computing,3,5,COMP1600,2,2023
+MATH2250,Web Programming and Technologies 1,3,2,COMP1604,2,2021
+MATH1115,Programming 2,3,1,COMP2606,3,2025
+INFO3604,Computer Networks,3,3,COMP2611,2,2025
+COMP3609,Enterprise Database Systems,3,3,MATH2250,2,2022
+INFO2602,Design and Analysis of Algorithms,3,0,INFO2601,3,2021
+INFO2604,Introduction to Data Analytics,3,1,COMP2611,3,2025
+FOUN1105,Computer Networks,3,5,MATH2250,2,2024
+MATH2250,Design and Analysis of Algorithms,3,0,INFO2601,3,2023
+COMP2603,Governance,3,5,COMP3605,2,2022
+COMP2601,Introduction to Data Analytics,3,5,COMP2611,1,2021
+INFO2604,Introduction to Information Technology Concepts,3,5,COMP1603,3,2023
+INFO2602,Object-Oriented Programming 1,3,0,COMP1603,3,2024
+FOUN1105,Industrial Statistics,3,3,MATH2250,2,2025
+COMP3610,Computer Architecture,3,3,COMP1600,3,2021
+COMP3606,Law,3,4,INFO2601,2,2022
+COMP3607,Programming 3,3,0,COMP3605,1,2024
+COMP2604,Design and Analysis of Algorithms,3,3,COMP2611,2,2023
+FOUN1105,Fundamental Mathematics for the General Sciences 1,3,0,MATH2250,1,2025
+INFO2602,Theory of Computing,3,0,COMP1602,1,2022
+FOUN1105,Object-Oriented Programming 1,3,5,COMP1604,1,2023
+COMP3609,Data Structures,3,0,COMP3605,2,2025
+COMP1602,Data Structures,3,1,COMP1603,2,2023
+COMP1603,Intelligent Systems,3,2,COMP2611,1,2021
+COMP2601,Fundamental Mathematics for the General Sciences 1,3,5,COMP1604,3,2025
+COMP3609,Governance,3,2,COMP2611,2,2021
+INFO1600,Introduction to Data Analytics,3,4,MATH2250,2,2023
+COMP2602,Introduction to Data Analytics,3,2,MATH2250,2,2023
+COMP2603,Theory of Computing,3,1,COMP2606,3,2025
+COMP2606,Information Systems Security,3,3,COMP2611,3,2024
+COMP1602,Big Data Analytics,3,0,COMP1602,2,2023
+FOUN1105,Mathematics for Computing,3,2,COMP2606,3,2022
+MATH2250,Object-Oriented Programming II,3,4,COMP1603,2,2025
+FOUN1301,Programming 2,3,2,COMP1600,3,2025
+COMP3609,Project,3,0,COMP2606,2,2021
+COMP3602,Programming 3,3,4,COMP3605,3,2023
+COMP1603,Introduction to Information Technology Concepts,3,2,COMP3605,2,2024
+INFO1601,Design and Analysis of Algorithms,3,3,COMP2611,3,2022
+COMP3602,Programming 2,3,1,COMP3605,3,2025
+COMP2604,Programming 2,3,5,COMP3605,1,2022
+MATH1115,Introduction to Computing Concepts,3,1,COMP1603,3,2021
+FOUN1105,Object-Oriented Programming II,3,2,COMP2606,1,2021
+COMP1604,Introduction to Data Analytics,3,5,COMP1602,3,2023
+COMP1604,Web Programming and Technologies 1,3,1,COMP1603,2,2024
+COMP1604,Object-Oriented Programming 1,3,4,COMP2611,2,2022
+COMP2604,Introduction to Computing Concepts,3,0,COMP1603,1,2021
+COMP1603,Programming 2,3,1,COMP1603,1,2021
+COMP3606,Introduction to Computing Concepts,3,0,COMP1602,1,2023
+COMP1601,Design and Analysis of Algorithms,3,4,COMP1600,2,2023
+MATH1115,Mathematics for Computing,3,0,INFO2601,2,2021
+COMP3605,Human-Computer Interaction,3,5,COMP3605,3,2022
+COMP1602,Operating Systems,3,1,COMP1602,1,2024
+COMP3607,Game Programming,3,1,COMP2606,1,2022
+COMP3603,Intelligent Systems,3,0,COMP1603,2,2025
+FOUN1301,Information Systems Security,3,5,COMP2611,1,2021
+FOUN1105,Object-Oriented Programming II,3,2,COMP1603,1,2024
+INFO1601,Big Data Analytics,3,5,COMP1604,3,2021
+COMP2603,Law,3,3,COMP1604,1,2022
+COMP1601,Introduction to Information Technology Concepts,3,3,COMP1600,2,2023
+COMP3608,Programming 1,3,4,COMP1604,3,2023
+COMP1604,Computer Networks,3,5,COMP1603,1,2024
+COMP3603,Computer Networks,3,2,INFO2601,2,2021
+INFO3604,Object-Oriented Programming II,3,0,COMP2611,1,2024
+MATH2250,Computer Networks,3,4,COMP2611,2,2025
+INFO1601,Fundamental Mathematics for the General Sciences 1,3,5,COMP1600,3,2022
+INFO1601,Economy and Society,3,1,COMP1600,3,2025
+INFO1601,Mathematics for Computing,3,1,COMP1604,2,2021
+COMP3609,Introduction to Information Technology Concepts,3,2,COMP1604,3,2021
+COMP2606,Project,3,1,COMP1602,1,2024
+INFO3604,Caribbean Civilization,3,1,COMP1602,2,2025
+FOUN1101,Programming 1,3,0,COMP3605,3,2024
+MATH1115,Data Structures,3,2,COMP2606,3,2024
+INFO1600,Information Systems Security,3,0,COMP1600,2,2023
+COMP3602,Programming 3,3,5,MATH2250,3,2022
+COMP1601,Fundamental Mathematics for the General Sciences 1,3,5,COMP2611,3,2024
+COMP2611,Computer Networks,3,1,COMP2606,1,2024
+COMP3607,Game Programming,3,0,MATH2250,3,2022
+COMP3610,Project,3,5,COMP1604,1,2022
+FOUN1301,Data Structures,3,4,COMP2606,3,2022
+COMP3601,Intelligent Systems,3,1,COMP1604,2,2023
+COMP2602,Human-Computer Interaction,3,4,COMP1603,2,2025
+COMP3608,Operating Systems,3,0,COMP2611,2,2022
+COMP1602,Human-Computer Interaction,3,2,COMP2611,1,2022
+COMP3602,Information Systems Security,3,0,COMP2606,1,2023
+COMP1600,Computer Architecture,3,4,COMP3605,1,2022
+COMP3606,Mathematics for Computing,3,1,INFO2601,2,2023
+INFO2604,Introduction to Computing Concepts,3,1,COMP1603,2,2022
+COMP2606,Programming 3,3,5,MATH2250,3,2023
+FOUN1301,Fundamental Mathematics for the General Sciences 1,3,0,COMP1603,1,2021
+COMP2603,Law,3,0,COMP2606,2,2021
+COMP2605,Introduction to Data Analytics,3,5,COMP1604,3,2025
+INFO1601,Law,3,5,COMP1604,2,2021
+COMP2601,Big Data Analytics,3,5,COMP1604,1,2022
+COMP2605,Caribbean Civilization,3,5,COMP2611,3,2025
+FOUN1105,Introduction to Data Analytics,3,0,COMP1603,2,2024
+FOUN1105,Introduction to Information Technology Concepts,3,2,MATH2250,3,2025
+COMP2601,Theory of Computing,3,4,INFO2601,3,2024
+FOUN1105,Design and Analysis of Algorithms,3,4,COMP1604,2,2022
+INFO2602,Web Programming and Technologies 1,3,3,INFO2601,2,2024
+INFO3604,Fundamental Mathematics for the General Sciences 1,3,0,MATH2250,1,2023
+COMP3607,Theory of Computing,3,0,COMP1602,2,2024
+COMP3602,Project,3,1,COMP2611,2,2023
+COMP2602,Big Data Analytics,3,3,COMP1604,1,2024
+COMP2605,Game Programming,3,0,COMP3605,2,2022
+INFO3604,Data Structures,3,0,COMP3605,1,2023
+COMP1601,Law,3,1,COMP1603,2,2022
+COMP2606,Wireless and Mobile Computing,3,0,COMP1602,3,2024
+INFO3604,Programming 3,3,1,COMP1602,2,2023
+INFO1601,Introduction to WWW Programming,3,1,COMP1600,2,2024
+COMP1601,Object-Oriented Programming II,3,2,COMP1602,2,2024
+FOUN1301,Enterprise Database Systems,3,5,COMP3605,2,2025
+COMP3601,Programming 2,3,1,MATH2250,2,2024
+COMP3608,Intelligent Systems,3,1,COMP2606,2,2022
+MATH1115,Computer Networks,3,2,COMP1602,3,2025
+COMP2606,Fundamental Mathematics for the General Sciences 1,3,5,COMP1603,2,2023
+COMP1600,Data Structures,3,3,COMP1604,2,2024
+COMP1604,Fundamental Mathematics for the General Sciences 1,3,2,INFO2601,1,2023
+COMP2611,Operating Systems,3,4,COMP2606,2,2021
+MATH1115,Wireless and Mobile Computing,3,5,COMP1603,2,2023
+COMP1603,Operating Systems,3,0,COMP1604,3,2024
+INFO1601,Industrial Statistics,3,5,COMP3605,1,2023
+COMP1604,Introduction to WWW Programming,3,1,COMP2611,2,2022
+INFO1600,Law,3,1,COMP1602,2,2025
+COMP3601,Human-Computer Interaction,3,1,COMP1600,3,2021
+FOUN1105,Human-Computer Interaction,3,4,COMP2606,1,2024
+COMP3609,Computer Architecture,3,0,COMP1602,2,2023
+MATH1115,Computer Networks,3,3,COMP3605,1,2025
+COMP3603,Introduction to Data Analytics,3,3,COMP2611,2,2023
+COMP2611,Game Programming,3,3,COMP2606,1,2022
+COMP2603,Data Structures,3,1,COMP1602,1,2024
+COMP3608,Theory of Computing,3,2,COMP1600,2,2021
+COMP1604,Programming 3,3,3,COMP3605,1,2023
+COMP3610,Data Structures,3,5,COMP2606,3,2023
+COMP1604,Scientific and Technical Writing,3,0,COMP2611,1,2023
+INFO2602,Introduction to WWW Programming,3,2,COMP2611,3,2025
+INFO1600,Computer Architecture,3,1,COMP3605,1,2021
+COMP2603,Intelligent Systems,3,1,MATH2250,1,2022
+COMP1601,Introduction to Computing Concepts,3,4,MATH2250,2,2023
+COMP3609,Theory of Computing,3,5,MATH2250,1,2023
+COMP2601,Operating Systems,3,3,COMP1603,1,2022
+COMP2603,Information Systems Security,3,0,COMP1600,1,2022
+COMP1601,Programming 2,3,0,COMP2611,3,2023
+COMP2606,Software Engineering 1,3,3,COMP1600,3,2021
+COMP3609,Fundamental Mathematics for the General Sciences 1,3,0,COMP1603,3,2023
+COMP1602,Computer Architecture,3,2,COMP2606,2,2022
+COMP3610,Caribbean Civilization,3,0,COMP1603,3,2022
+COMP2606,Programming 1,3,0,INFO2601,3,2023
+COMP1600,Operating Systems,3,1,COMP1602,1,2022
+INFO2602,Programming 3,3,4,INFO2601,3,2021
+COMP3602,Law,3,5,MATH2250,1,2021
+INFO2602,Theory of Computing,3,2,MATH2250,3,2024
+COMP3603,Intelligent Systems,3,4,COMP3605,3,2021
+INFO2602,Intelligent Systems,3,0,COMP2611,1,2025
+COMP3610,Object-Oriented Programming II,3,3,COMP2611,1,2021
+COMP3605,Information Systems Security,3,5,MATH2250,3,2023
+COMP1601,Economy and Society,3,1,COMP2606,2,2022
+COMP2605,Programming 3,3,5,MATH2250,2,2025
+COMP1604,Enterprise Database Systems,3,3,COMP1600,1,2021
+COMP1602,Programming 3,3,4,MATH2250,2,2023
+COMP3602,Scientific and Technical Writing,3,0,COMP1604,1,2021
+FOUN1101,Fundamental Mathematics for the General Sciences 1,3,4,COMP1603,3,2024
+COMP1602,Enterprise Database Systems,3,1,COMP2611,3,2023
+COMP2601,Data Structures,3,4,MATH2250,3,2022
+INFO3604,Theory of Computing,3,5,COMP1604,2,2022
+COMP3606,Object-Oriented Programming 1,3,4,COMP1604,1,2024
+FOUN1101,Human-Computer Interaction,3,3,COMP2611,3,2024
+INFO1601,Industrial Statistics,3,5,COMP1602,1,2022
+MATH2250,Introduction to WWW Programming,3,0,INFO2601,3,2021
+COMP3610,Introduction to WWW Programming,3,4,COMP1604,3,2025
+COMP1604,Governance,3,5,COMP1602,1,2022
+COMP3610,Programming 1,3,0,COMP1602,2,2021
+FOUN1105,Project,3,3,COMP2606,1,2021
+FOUN1105,Programming 1,3,4,COMP1600,1,2024
+COMP3603,Introduction to Data Analytics,3,5,COMP1602,2,2021
+COMP2606,Intelligent Systems,3,2,COMP1604,2,2022
+FOUN1301,Web Programming and Technologies 1,3,1,COMP1604,3,2021
+COMP2602,Operating Systems,3,0,COMP1600,1,2023
+MATH1115,Scientific and Technical Writing,3,0,COMP3605,2,2025
+COMP1603,Economy and Society,3,0,INFO2601,3,2023
+INFO1600,Programming 1,3,4,COMP2611,2,2025
+INFO3604,Design and Analysis of Algorithms,3,3,COMP1604,3,2024
+COMP2603,Introduction to Information Technology Concepts,3,0,COMP1602,3,2025
+COMP3603,Theory of Computing,3,0,COMP3605,3,2025
+COMP1603,Mathematics for Computing,3,0,INFO2601,2,2022
+MATH1115,Intelligent Systems,3,0,COMP2611,1,2022
+COMP1601,Programming 3,3,3,COMP2606,2,2023
+COMP2606,Fundamental Mathematics for the General Sciences 1,3,4,COMP2606,3,2024
+COMP2605,Object-Oriented Programming II,3,5,COMP2611,3,2025
+COMP2611,Project,3,0,COMP2611,1,2024
+COMP3606,Computer Architecture,3,1,COMP2611,2,2025
+COMP3607,Governance,3,3,COMP2606,3,2023
+COMP1602,Programming 2,3,3,COMP1603,2,2025
+COMP1604,Programming 2,3,5,MATH2250,3,2021
+COMP1603,Mathematics for Computing,3,4,INFO2601,3,2024
+COMP1601,Programming 2,3,5,INFO2601,1,2022
+INFO3604,Programming 2,3,1,COMP3605,3,2022
+COMP2605,Fundamental Mathematics for the General Sciences 1,3,1,INFO2601,2,2021
+INFO3604,Object-Oriented Programming 1,3,2,COMP1600,3,2024
+MATH2250,Operating Systems,3,5,COMP1602,2,2024
+COMP2601,Computer Networks,3,1,COMP1603,3,2024
+COMP1602,Data Structures,3,3,COMP1604,3,2023
+COMP2611,Object-Oriented Programming 1,3,4,COMP1604,2,2025
+MATH1115,Caribbean Civilization,3,3,COMP2606,2,2022
+COMP3607,Game Programming,3,4,INFO2601,2,2022
+COMP1602,Scientific and Technical Writing,3,3,INFO2601,1,2022
+COMP3602,Programming 2,3,3,MATH2250,2,2024
+FOUN1301,Programming 3,3,4,COMP1603,3,2023
+COMP1603,Data Structures,3,0,COMP3605,1,2021
+INFO2602,Project,3,3,INFO2601,2,2025
+COMP3603,Object-Oriented Programming 1,3,4,INFO2601,2,2025
+FOUN1101,Game Programming,3,3,COMP2606,2,2023
+COMP3609,Intelligent Systems,3,1,COMP1600,1,2021
+COMP3602,Data Structures,3,5,COMP2606,2,2025
+COMP3601,Governance,3,5,COMP2611,2,2025
+COMP2611,Game Programming,3,5,COMP1604,3,2023
+COMP2606,Introduction to Information Technology Concepts,3,0,INFO2601,1,2025
+COMP1604,Web Programming and Technologies 1,3,4,MATH2250,1,2021
+COMP3603,Human-Computer Interaction,3,4,COMP2611,2,2025
+INFO2604,Introduction to Information Technology Concepts,3,3,COMP1600,1,2023
+COMP3608,Wireless and Mobile Computing,3,0,COMP1600,2,2023
+COMP3609,Introduction to Computing Concepts,3,1,COMP2611,2,2024
+INFO1601,Information Systems Security,3,1,COMP1604,3,2024
+MATH2250,Industrial Statistics,3,0,COMP2606,3,2022
+FOUN1105,Big Data Analytics,3,0,INFO2601,2,2024
+COMP2603,Computer Networks,3,0,COMP1600,2,2022
+COMP2603,Big Data Analytics,3,3,COMP1604,3,2022
+COMP3610,Mathematics for Computing,3,3,COMP1604,3,2021
+COMP3610,Data Structures,3,5,COMP1604,2,2021
+INFO1601,Intelligent Systems,3,2,COMP2611,1,2022
+COMP1604,Programming 2,3,0,INFO2601,3,2023
+FOUN1105,Introduction to Information Technology Concepts,3,5,COMP1604,1,2022
+COMP3610,Data Structures,3,2,COMP1604,3,2021
+INFO2602,Object-Oriented Programming 1,3,0,COMP1604,2,2025
+COMP2602,Introduction to Information Technology Concepts,3,1,COMP2606,1,2021
+INFO2604,Human-Computer Interaction,3,2,COMP1602,1,2022
+COMP2606,Enterprise Database Systems,3,2,COMP3605,2,2024
+COMP2606,Operating Systems,3,1,COMP1602,3,2024
+FOUN1301,Programming 3,3,1,COMP3605,2,2023
+FOUN1301,Programming 2,3,2,COMP1600,2,2023
+FOUN1101,Theory of Computing,3,1,COMP2606,3,2022
+COMP3606,Programming 3,3,2,COMP2611,1,2025
+COMP3608,Object-Oriented Programming 1,3,3,COMP1604,1,2022
+COMP3602,Fundamental Mathematics for the General Sciences 1,3,1,COMP1600,3,2021
+COMP2604,Introduction to WWW Programming,3,3,COMP3605,3,2022
+COMP2601,Theory of Computing,3,3,COMP1600,3,2021
+COMP3609,Web Programming and Technologies 1,3,5,COMP1603,3,2021
+COMP3605,Project,3,2,COMP1600,3,2021
+INFO3604,Game Programming,3,5,COMP1600,1,2021
+MATH1115,Big Data Analytics,3,0,MATH2250,2,2023
+COMP2602,Scientific and Technical Writing,3,1,INFO2601,2,2022
+COMP2602,Web Programming and Technologies 1,3,5,COMP1603,2,2022
+COMP2602,Scientific and Technical Writing,3,2,COMP1602,3,2021
+COMP1600,Operating Systems,3,1,COMP1600,3,2025
+MATH2250,Introduction to Information Technology Concepts,3,4,COMP1602,1,2022
+FOUN1105,Data Structures,3,4,COMP1602,3,2022
+INFO1600,Introduction to Computing Concepts,3,5,COMP2606,1,2022
+COMP2603,Computer Networks,3,1,COMP2606,1,2022
+COMP3605,Fundamental Mathematics for the General Sciences 1,3,2,COMP1603,3,2023
+COMP3610,Introduction to Data Analytics,3,3,COMP3605,3,2024
+COMP1601,Web Programming and Technologies 1,3,5,COMP1600,2,2025
+INFO2602,Introduction to Data Analytics,3,0,COMP1602,2,2022
+COMP3601,Introduction to Data Analytics,3,4,COMP2606,2,2024
+COMP3601,Law,3,5,COMP2611,3,2021
+COMP1601,Programming 1,3,5,MATH2250,3,2021
+COMP3607,Caribbean Civilization,3,5,COMP2606,1,2021
+COMP1603,Programming 2,3,3,COMP2606,3,2022
+MATH1115,Introduction to WWW Programming,3,0,COMP2611,1,2025
+COMP3605,Web Programming and Technologies 1,3,2,COMP1602,2,2024
+INFO2604,Data Structures,3,5,INFO2601,3,2024
+COMP2605,Programming 1,3,1,INFO2601,3,2023
+MATH2250,Scientific and Technical Writing,3,4,COMP3605,1,2022
+COMP1602,Object-Oriented Programming 1,3,2,COMP1600,2,2025
+INFO2602,Computer Networks,3,2,COMP1602,1,2024
+COMP3601,Object-Oriented Programming 1,3,3,COMP3605,1,2025
+FOUN1105,Introduction to Information Technology Concepts,3,2,COMP1603,1,2025
+MATH1115,Programming 3,3,4,MATH2250,2,2023
+COMP2602,Human-Computer Interaction,3,2,COMP2606,1,2023
+COMP1603,Introduction to Information Technology Concepts,3,1,COMP2611,3,2024
+FOUN1301,Wireless and Mobile Computing,3,4,COMP2611,2,2024
+FOUN1301,Scientific and Technical Writing,3,0,COMP2611,3,2022
+COMP3605,Programming 1,3,3,COMP3605,2,2022
+COMP3602,Enterprise Database Systems,3,1,INFO2601,3,2024
+COMP3609,Project,3,5,COMP1600,3,2024
+MATH1115,Industrial Statistics,3,3,COMP1600,2,2025
+COMP1603,Caribbean Civilization,3,4,COMP1600,3,2021
+FOUN1105,Economy and Society,3,4,COMP1604,1,2023
+COMP2605,Law,3,2,COMP1604,2,2023
+INFO1600,Project,3,3,COMP2611,2,2021
+COMP3605,Project,3,4,COMP1603,2,2024
+INFO3604,Programming 1,3,2,COMP1603,3,2023
+COMP3602,Mathematics for Computing,3,2,COMP2611,3,2025
+COMP3605,Programming 3,3,5,COMP1604,2,2022
+COMP2601,Big Data Analytics,3,3,COMP1604,1,2024
+COMP2611,Computer Networks,3,4,COMP1603,3,2021
+COMP3602,Theory of Computing,3,3,COMP2606,3,2021
+COMP2603,Object-Oriented Programming 1,3,0,MATH2250,1,2023
+FOUN1101,Introduction to Computing Concepts,3,4,COMP1600,2,2024
+INFO2602,Software Engineering 1,3,5,COMP1602,3,2023
+INFO2602,Software Engineering 1,3,1,COMP1603,3,2023
+COMP1603,Theory of Computing,3,5,INFO2601,1,2024
+INFO2602,Game Programming,3,3,COMP1600,2,2024
+COMP3609,Industrial Statistics,3,0,COMP1600,2,2024
+COMP3609,Data Structures,3,5,COMP3605,3,2023
+COMP1603,Scientific and Technical Writing,3,4,MATH2250,1,2024
+FOUN1105,Economy and Society,3,2,COMP2611,1,2025
+COMP1604,Introduction to Computing Concepts,3,0,INFO2601,3,2021
+COMP2606,Introduction to Data Analytics,3,3,COMP1600,2,2023
+FOUN1101,Caribbean Civilization,3,1,INFO2601,2,2021
+COMP2604,Game Programming,3,1,COMP1602,3,2024
+COMP1602,Mathematics for Computing,3,3,COMP2611,3,2022
+COMP3605,Enterprise Database Systems,3,3,COMP2611,2,2023
+COMP1603,Enterprise Database Systems,3,0,COMP3605,3,2022
+FOUN1301,Game Programming,3,4,COMP2611,2,2021
+FOUN1301,Economy and Society,3,2,COMP2611,3,2021
+MATH2250,Object-Oriented Programming 1,3,2,MATH2250,3,2025
+INFO2602,Introduction to Computing Concepts,3,3,COMP3605,3,2024
+INFO1601,Theory of Computing,3,4,COMP1603,3,2023
+FOUN1105,Scientific and Technical Writing,3,3,INFO2601,3,2021
+COMP3601,Caribbean Civilization,3,5,COMP3605,2,2022
+COMP1604,Fundamental Mathematics for the General Sciences 1,3,5,COMP1600,3,2023
+COMP3607,Project,3,5,MATH2250,3,2021
+FOUN1105,Mathematics for Computing,3,0,COMP3605,2,2022
+FOUN1105,Scientific and Technical Writing,3,1,COMP1603,2,2024
+COMP3606,Operating Systems,3,2,COMP1604,2,2023
+COMP2602,Programming 3,3,3,COMP3605,3,2021
+COMP2602,Programming 2,3,3,MATH2250,1,2022
+COMP2604,Caribbean Civilization,3,3,INFO2601,3,2022
+FOUN1105,Governance,3,0,COMP1602,1,2024
+INFO1600,Operating Systems,3,3,INFO2601,3,2023
+COMP3607,Fundamental Mathematics for the General Sciences 1,3,4,COMP1603,1,2025
+COMP3603,Economy and Society,3,0,INFO2601,3,2022
+COMP3602,Human-Computer Interaction,3,0,COMP2611,2,2021
+INFO3604,Design and Analysis of Algorithms,3,5,COMP1604,3,2025
+COMP3602,Law,3,3,COMP2611,3,2025
+COMP3603,Programming 2,3,5,COMP1602,2,2024
+COMP3602,Intelligent Systems,3,4,COMP2611,1,2025
+INFO2604,Enterprise Database Systems,3,5,COMP2606,1,2025
+COMP1600,Object-Oriented Programming 1,3,1,COMP3605,2,2025
+INFO2604,Fundamental Mathematics for the General Sciences 1,3,3,COMP2611,2,2021
+COMP1601,Intelligent Systems,3,0,COMP1600,1,2022
+INFO1600,Project,3,1,COMP1604,2,2022
+COMP2602,Introduction to Information Technology Concepts,3,0,COMP1604,1,2024
+COMP3602,Theory of Computing,3,0,COMP1600,1,2024
+COMP1602,Web Programming and Technologies 1,3,0,COMP1603,3,2025
+COMP1602,Wireless and Mobile Computing,3,4,INFO2601,1,2022
+COMP1601,Computer Architecture,3,2,COMP3605,3,2025
+COMP3608,Data Structures,3,2,COMP1600,1,2023
+INFO3604,Theory of Computing,3,3,COMP1602,1,2025
+COMP3603,Wireless and Mobile Computing,3,2,COMP2611,3,2021
+COMP3608,Programming 3,3,0,COMP2606,3,2025
+COMP1603,Design and Analysis of Algorithms,3,4,MATH2250,1,2022
+COMP1601,Big Data Analytics,3,2,COMP2606,1,2021
+COMP2611,Scientific and Technical Writing,3,4,COMP3605,3,2023
+COMP1602,Law,3,0,COMP3605,3,2023
+INFO2604,Information Systems Security,3,0,COMP1600,3,2024
+COMP3602,Big Data Analytics,3,0,COMP1600,2,2024
+COMP1603,Web Programming and Technologies 1,3,3,COMP2611,2,2021
+INFO2602,Design and Analysis of Algorithms,3,3,COMP1600,3,2023
+COMP1602,Software Engineering 1,3,3,COMP1600,2,2021
+FOUN1105,Introduction to Computing Concepts,3,5,COMP1604,1,2022
+INFO1600,Wireless and Mobile Computing,3,1,MATH2250,1,2023
+COMP2601,Operating Systems,3,5,INFO2601,3,2025
+COMP3610,Theory of Computing,3,0,COMP3605,1,2023
+COMP1603,Software Engineering 1,3,4,COMP2611,3,2024
+COMP3603,Programming 2,3,4,COMP1600,1,2022
+FOUN1101,Information Systems Security,3,4,COMP2611,1,2025
+INFO1600,Operating Systems,3,2,COMP2611,2,2025
+COMP3610,Fundamental Mathematics for the General Sciences 1,3,2,MATH2250,2,2024
+COMP2601,Object-Oriented Programming 1,3,4,COMP2606,3,2021
+INFO1600,Computer Networks,3,3,COMP1600,1,2021
+COMP2606,Programming 1,3,5,COMP1603,2,2025
+COMP2604,Programming 1,3,1,COMP1600,2,2021
+COMP2603,Object-Oriented Programming 1,3,0,COMP1603,3,2024
+COMP1602,Introduction to Information Technology Concepts,3,2,COMP2611,3,2022
+COMP3609,Introduction to Computing Concepts,3,1,COMP2611,1,2022
+COMP3608,Industrial Statistics,3,2,COMP1600,1,2021
+COMP1600,Scientific and Technical Writing,3,5,INFO2601,1,2022
+COMP3610,Theory of Computing,3,0,COMP2606,2,2025
+COMP2604,Programming 3,3,0,COMP1600,2,2024
+COMP1604,Introduction to Data Analytics,3,0,COMP3605,3,2023
+FOUN1101,Project,3,3,COMP1604,2,2023
+COMP3608,Introduction to WWW Programming,3,3,COMP1600,1,2022
+COMP2606,Object-Oriented Programming 1,3,0,INFO2601,2,2024
+COMP3609,Object-Oriented Programming 1,3,0,COMP1604,3,2025
+COMP2603,Governance,3,3,COMP1602,3,2023
+COMP3602,Governance,3,3,COMP3605,3,2022
+INFO1601,Introduction to WWW Programming,3,5,COMP1603,3,2022
+COMP2604,Theory of Computing,3,3,COMP1602,1,2025
+COMP2601,Object-Oriented Programming II,3,2,COMP1604,1,2025
+COMP3607,Programming 3,3,5,COMP3605,3,2022
+COMP3606,Object-Oriented Programming II,3,2,COMP1603,3,2023
+COMP3601,Information Systems Security,3,3,COMP1603,3,2022
+MATH1115,Web Programming and Technologies 1,3,1,COMP1604,3,2023
+FOUN1105,Project,3,2,COMP2606,1,2023
+COMP2604,Object-Oriented Programming 1,3,5,COMP1604,1,2025
+COMP3609,Project,3,2,COMP1602,2,2024
+MATH1115,Information Systems Security,3,0,COMP2606,1,2021
+INFO2604,Caribbean Civilization,3,1,COMP1600,1,2025
+COMP2606,Project,3,4,COMP2606,3,2024
+COMP3610,Design and Analysis of Algorithms,3,4,COMP1602,2,2024
+COMP2605,Programming 2,3,2,COMP2606,3,2025
+COMP2601,Wireless and Mobile Computing,3,5,COMP3605,2,2023
+COMP1603,Scientific and Technical Writing,3,5,COMP2611,2,2021
+COMP3610,Programming 1,3,2,MATH2250,3,2023
+COMP2604,Introduction to Computing Concepts,3,5,COMP1600,1,2021
+COMP1602,Fundamental Mathematics for the General Sciences 1,3,0,COMP1602,2,2024
+COMP3607,Object-Oriented Programming 1,3,3,COMP2611,2,2025
+FOUN1101,Information Systems Security,3,4,COMP2611,2,2022
+MATH2250,Enterprise Database Systems,3,0,COMP1602,1,2021
+FOUN1301,Game Programming,3,3,COMP2611,2,2022
+FOUN1101,Game Programming,3,0,COMP2606,2,2021
+COMP3606,Scientific and Technical Writing,3,3,COMP2611,3,2024
+COMP2611,Big Data Analytics,3,5,INFO2601,1,2024
+COMP3609,Design and Analysis of Algorithms,3,1,MATH2250,3,2022
+COMP2601,Object-Oriented Programming II,3,2,COMP2606,2,2024
+COMP3603,Programming 1,3,1,COMP1604,1,2021
+MATH1115,Big Data Analytics,3,4,COMP2611,2,2021
+COMP1603,Object-Oriented Programming II,3,0,COMP1600,1,2022
+COMP3607,Object-Oriented Programming 1,3,3,COMP3605,2,2021
+FOUN1301,Scientific and Technical Writing,3,4,COMP1600,1,2025
+COMP2605,Wireless and Mobile Computing,3,5,COMP3605,1,2023
+COMP3608,Law,3,5,COMP1604,1,2023
+MATH2250,Operating Systems,3,4,COMP2606,2,2022
+COMP3608,Enterprise Database Systems,3,5,COMP1603,2,2025
+COMP2605,Enterprise Database Systems,3,0,COMP1602,3,2025
+COMP1604,Intelligent Systems,3,5,COMP3605,3,2023
+INFO1600,Governance,3,2,COMP1602,2,2023
+COMP2606,Game Programming,3,4,COMP2611,2,2023
+COMP1602,Information Systems Security,3,1,COMP1604,2,2023
+MATH1115,Theory of Computing,3,1,COMP2606,3,2025
+COMP3609,Governance,3,3,COMP3605,1,2022
+COMP1600,Caribbean Civilization,3,3,COMP2611,3,2023
+COMP2605,Fundamental Mathematics for the General Sciences 1,3,2,COMP1604,2,2021
+COMP2605,Operating Systems,3,0,COMP1603,3,2025
+INFO3604,Object-Oriented Programming II,3,1,COMP1603,1,2022
+MATH2250,Design and Analysis of Algorithms,3,3,COMP2611,1,2024
+COMP1601,Programming 1,3,4,COMP2611,3,2022
+COMP2611,Web Programming and Technologies 1,3,2,COMP3605,2,2022
+COMP2604,Big Data Analytics,3,4,MATH2250,3,2023
+COMP2601,Introduction to WWW Programming,3,5,COMP1600,1,2021
+COMP2611,Web Programming and Technologies 1,3,5,COMP1602,2,2021
+INFO1601,Introduction to Information Technology Concepts,3,3,MATH2250,2,2023
+COMP3607,Software Engineering 1,3,1,COMP1603,1,2022
+COMP2611,Web Programming and Technologies 1,3,4,COMP2611,3,2023
+COMP2604,Introduction to Data Analytics,3,3,COMP2606,3,2022
+COMP2602,Theory of Computing,3,1,COMP3605,2,2024
+COMP2603,Theory of Computing,3,2,COMP2606,3,2025
+INFO3604,Computer Networks,3,0,INFO2601,2,2024
+COMP3605,Data Structures,3,5,INFO2601,3,2021
+COMP2606,Wireless and Mobile Computing,3,4,COMP2611,2,2025
+COMP1601,Wireless and Mobile Computing,3,3,MATH2250,3,2023
+COMP3605,Industrial Statistics,3,1,COMP3605,3,2022
+COMP3602,Object-Oriented Programming II,3,1,COMP3605,1,2023
+COMP1604,Computer Architecture,3,0,COMP3605,3,2022
+MATH1115,Enterprise Database Systems,3,4,COMP2611,2,2022
+COMP2601,Human-Computer Interaction,3,0,INFO2601,3,2024
+COMP1600,Wireless and Mobile Computing,3,4,INFO2601,3,2024
+COMP1603,Web Programming and Technologies 1,3,5,COMP2611,3,2024
+COMP1603,Programming 1,3,2,INFO2601,2,2024
+COMP3607,Economy and Society,3,0,INFO2601,3,2022
+INFO1601,Programming 1,3,1,COMP1602,2,2023
+INFO1601,Scientific and Technical Writing,3,4,COMP1603,2,2024
+COMP3608,Fundamental Mathematics for the General Sciences 1,3,0,COMP1602,3,2024
+COMP2605,Introduction to Information Technology Concepts,3,3,COMP1604,2,2024
+COMP3601,Caribbean Civilization,3,5,COMP2606,2,2022
+COMP3608,Big Data Analytics,3,2,COMP2611,1,2025
+INFO1601,Software Engineering 1,3,0,COMP2606,1,2021
+FOUN1101,Enterprise Database Systems,3,1,COMP2606,1,2022
+COMP1604,Big Data Analytics,3,1,COMP1603,3,2024
+COMP3601,Introduction to WWW Programming,3,4,COMP1604,1,2025
+COMP1601,Game Programming,3,2,COMP1603,2,2024
+COMP2604,Object-Oriented Programming 1,3,3,COMP1600,1,2025
+COMP2606,Economy and Society,3,3,COMP1604,3,2025
+COMP2601,Law,3,4,COMP1603,2,2025
+COMP2603,Object-Oriented Programming II,3,1,MATH2250,2,2021
+FOUN1105,Enterprise Database Systems,3,0,COMP1600,1,2022
+INFO3604,Law,3,5,COMP3605,3,2022
+INFO1600,Project,3,1,COMP1600,2,2023
+COMP3609,Economy and Society,3,4,INFO2601,2,2025
+INFO1600,Introduction to Computing Concepts,3,0,INFO2601,3,2024
+COMP2604,Theory of Computing,3,4,MATH2250,3,2022
+MATH2250,Programming 2,3,1,MATH2250,3,2025
+COMP2611,Design and Analysis of Algorithms,3,0,COMP2611,2,2023
+COMP1603,Introduction to Information Technology Concepts,3,5,COMP1600,2,2023
+COMP1602,Information Systems Security,3,4,COMP1600,1,2024
+COMP3605,Mathematics for Computing,3,1,MATH2250,1,2021
+MATH1115,Caribbean Civilization,3,1,COMP2611,3,2024
+INFO2604,Game Programming,3,1,INFO2601,1,2025
+MATH1115,Design and Analysis of Algorithms,3,4,MATH2250,3,2022
+MATH1115,Design and Analysis of Algorithms,3,0,COMP2611,2,2023
+INFO3604,Theory of Computing,3,5,COMP2606,3,2024
+MATH2250,Mathematics for Computing,3,4,COMP2611,2,2022
+INFO1600,Programming 1,3,3,COMP3605,1,2023
+COMP3602,Introduction to Data Analytics,3,4,MATH2250,1,2022
+COMP3601,Enterprise Database Systems,3,0,COMP2611,1,2025
+COMP1604,Introduction to WWW Programming,3,4,COMP2611,2,2024
+COMP1602,Data Structures,3,1,COMP3605,3,2022
+COMP3609,Economy and Society,3,1,COMP1602,2,2025
+COMP2603,Governance,3,3,COMP2611,2,2022
+COMP3606,Scientific and Technical Writing,3,5,COMP1603,2,2023
+COMP2603,Computer Architecture,3,5,COMP1604,3,2021
+INFO1601,Introduction to Computing Concepts,3,0,COMP3605,1,2025
+COMP2611,Introduction to Information Technology Concepts,3,2,COMP2611,3,2025
+COMP2604,Intelligent Systems,3,3,COMP2611,3,2023
+COMP2604,Game Programming,3,0,COMP1600,3,2021
+INFO2602,Fundamental Mathematics for the General Sciences 1,3,3,INFO2601,1,2021
+INFO1600,Wireless and Mobile Computing,3,1,MATH2250,1,2022
+COMP3603,Programming 2,3,0,COMP2611,3,2022
+COMP2601,Computer Architecture,3,2,COMP1603,2,2023
+COMP3610,Operating Systems,3,2,COMP2606,3,2024
+INFO2602,Operating Systems,3,4,INFO2601,1,2022
+COMP2604,Introduction to Computing Concepts,3,1,COMP2611,1,2021
+MATH2250,Introduction to Data Analytics,3,0,COMP2611,2,2023
+COMP3609,Programming 2,3,3,COMP2606,2,2022
+COMP2611,Introduction to WWW Programming,3,3,COMP2611,2,2024
+MATH2250,Introduction to WWW Programming,3,5,MATH2250,3,2021
+COMP1603,Theory of Computing,3,5,COMP1600,3,2022
+INFO1601,Introduction to Data Analytics,3,1,INFO2601,1,2023
+COMP1601,Data Structures,3,4,COMP2606,3,2021
+COMP2605,Software Engineering 1,3,5,INFO2601,3,2023
+COMP3602,Theory of Computing,3,3,COMP2611,2,2025
+INFO2602,Computer Networks,3,3,MATH2250,3,2022
+MATH2250,Project,3,5,COMP2606,3,2023
+INFO3604,Theory of Computing,3,4,COMP1604,3,2022
+COMP1604,Intelligent Systems,3,5,COMP1603,1,2025
+INFO1601,Caribbean Civilization,3,0,COMP1600,2,2025
+INFO1601,Operating Systems,3,4,COMP1600,3,2025
+COMP2602,Object-Oriented Programming 1,3,0,COMP1604,2,2022
+COMP1601,Information Systems Security,3,3,COMP1600,2,2022
+COMP2604,Object-Oriented Programming 1,3,0,COMP1602,2,2023
+MATH1115,Industrial Statistics,3,4,COMP1603,3,2022
+COMP3601,Fundamental Mathematics for the General Sciences 1,3,1,MATH2250,2,2023
+COMP3608,Big Data Analytics,3,1,COMP3605,1,2025
+COMP3601,Object-Oriented Programming 1,3,2,COMP2606,2,2024
+FOUN1301,Intelligent Systems,3,0,COMP1604,2,2024
+INFO1600,Law,3,4,COMP1603,3,2025
+FOUN1105,Web Programming and Technologies 1,3,2,COMP2606,1,2021
+COMP1600,Introduction to Data Analytics,3,1,COMP1604,2,2022
+FOUN1301,Software Engineering 1,3,1,COMP1603,3,2021
+COMP2601,Information Systems Security,3,4,INFO2601,3,2025
+COMP3601,Object-Oriented Programming II,3,0,COMP3605,1,2023
+COMP3606,Caribbean Civilization,3,3,MATH2250,1,2024
+FOUN1301,Economy and Society,3,0,COMP1602,2,2022
+COMP1604,Software Engineering 1,3,3,COMP3605,3,2025
+COMP2602,Theory of Computing,3,3,MATH2250,1,2024
+COMP2603,Mathematics for Computing,3,4,INFO2601,3,2023
+COMP1600,Programming 1,3,4,COMP1604,3,2023
+MATH1115,Programming 2,3,4,COMP1603,2,2025
+INFO2602,Governance,3,1,COMP1600,2,2023
+INFO2604,Introduction to WWW Programming,3,2,COMP1602,2,2023
+MATH1115,Object-Oriented Programming II,3,2,COMP2606,2,2025
+FOUN1105,Industrial Statistics,3,2,INFO2601,3,2025
+COMP3608,Law,3,3,COMP1602,3,2023
+INFO1600,Introduction to Data Analytics,3,0,COMP1600,2,2023
+FOUN1105,Governance,3,4,COMP2606,3,2025
+INFO2602,Introduction to Computing Concepts,3,1,COMP1600,3,2025
+COMP2601,Governance,3,1,COMP1603,3,2023
+INFO1600,Programming 2,3,4,COMP1602,3,2021
+COMP1603,Intelligent Systems,3,5,COMP1600,1,2022
+COMP3606,Introduction to Information Technology Concepts,3,4,COMP2611,2,2021
+COMP3603,Big Data Analytics,3,5,MATH2250,1,2021
+COMP1602,Industrial Statistics,3,0,COMP2611,3,2023
+COMP2605,Data Structures,3,4,INFO2601,1,2022
+INFO3604,Programming 2,3,3,INFO2601,1,2023
+COMP1604,Intelligent Systems,3,5,COMP1604,2,2021
+COMP2604,Game Programming,3,2,COMP1604,2,2023
+FOUN1105,Programming 1,3,2,COMP2611,2,2025
+MATH2250,Programming 1,3,0,COMP1604,3,2025
+COMP3602,Design and Analysis of Algorithms,3,4,COMP1604,3,2021
+MATH2250,Operating Systems,3,4,COMP1603,3,2022
+COMP3610,Law,3,1,COMP1604,2,2023
+INFO1600,Governance,3,1,COMP2606,3,2022
+FOUN1301,Project,3,5,COMP3605,3,2024
+COMP3602,Computer Architecture,3,3,COMP2611,3,2025
+INFO1600,Object-Oriented Programming 1,3,1,COMP2606,1,2021
+COMP3601,Software Engineering 1,3,4,MATH2250,2,2023
+FOUN1101,Industrial Statistics,3,1,MATH2250,3,2022
+COMP2604,Introduction to Information Technology Concepts,3,0,COMP1603,3,2024
+MATH2250,Programming 1,3,1,COMP2606,1,2023
+COMP2602,Big Data Analytics,3,1,MATH2250,2,2025
+COMP2603,Object-Oriented Programming 1,3,2,COMP3605,3,2025
+COMP1601,Introduction to WWW Programming,3,3,COMP2611,3,2022
+FOUN1101,Design and Analysis of Algorithms,3,4,COMP1602,1,2022
+COMP3609,Game Programming,3,4,COMP1602,3,2023
+MATH2250,Economy and Society,3,1,MATH2250,2,2025
+COMP3603,Mathematics for Computing,3,0,COMP2606,2,2021
+INFO3604,Intelligent Systems,3,1,COMP1603,1,2021
+COMP3606,Programming 3,3,2,COMP1600,3,2021
+COMP1604,Introduction to Data Analytics,3,3,COMP1600,3,2024
+MATH2250,Introduction to Computing Concepts,3,4,MATH2250,1,2021
+COMP2601,Programming 1,3,4,COMP1603,2,2022
+COMP3607,Theory of Computing,3,2,COMP1602,1,2024
+MATH1115,Fundamental Mathematics for the General Sciences 1,3,5,COMP2606,2,2025
+COMP1604,Introduction to Data Analytics,3,0,COMP2611,1,2024
+INFO1600,Mathematics for Computing,3,5,COMP3605,2,2023
+COMP3610,Governance,3,4,COMP2606,3,2024
+COMP1601,Introduction to Information Technology Concepts,3,4,COMP1600,2,2024
+COMP1602,Object-Oriented Programming II,3,3,COMP1602,1,2022
+COMP3607,Theory of Computing,3,4,COMP3605,1,2025
+COMP3607,Mathematics for Computing,3,3,MATH2250,2,2021
+MATH1115,Big Data Analytics,3,0,MATH2250,3,2024
+INFO1600,Introduction to Computing Concepts,3,3,COMP3605,3,2023
+COMP2606,Object-Oriented Programming II,3,0,COMP1602,3,2024
+COMP1602,Information Systems Security,3,3,COMP3605,3,2021
+COMP3607,Computer Architecture,3,0,COMP1600,1,2021
+INFO1600,Introduction to Data Analytics,3,1,COMP2611,2,2021
+COMP2604,Scientific and Technical Writing,3,2,COMP3605,3,2021
+MATH1115,Game Programming,3,3,COMP1603,3,2025
+FOUN1101,Object-Oriented Programming II,3,0,COMP1604,1,2023
+COMP3601,Software Engineering 1,3,0,MATH2250,2,2025
+COMP1600,Introduction to Data Analytics,3,4,INFO2601,1,2021
+COMP3607,Fundamental Mathematics for the General Sciences 1,3,4,COMP3605,1,2025
+COMP2602,Introduction to Data Analytics,3,2,COMP1602,2,2022
+INFO2602,Mathematics for Computing,3,1,COMP3605,1,2023
+FOUN1101,Software Engineering 1,3,0,INFO2601,3,2025
+INFO2602,Intelligent Systems,3,4,COMP1604,3,2024
+COMP3608,Game Programming,3,3,COMP1602,3,2022
+COMP3608,Wireless and Mobile Computing,3,0,COMP3605,1,2025
+COMP1602,Law,3,2,COMP1603,1,2023
+COMP3610,Law,3,0,COMP1604,1,2022
+COMP1601,Software Engineering 1,3,3,INFO2601,1,2023
+COMP1604,Industrial Statistics,3,3,COMP2611,2,2024
+COMP1602,Wireless and Mobile Computing,3,0,COMP2606,3,2022
+COMP3602,Data Structures,3,1,COMP1603,2,2024
+INFO3604,Computer Networks,3,1,COMP1604,3,2024
+COMP3602,Introduction to Information Technology Concepts,3,3,COMP1603,2,2021
+COMP3602,Game Programming,3,1,COMP3605,2,2021
+COMP3607,Caribbean Civilization,3,2,COMP3605,2,2025
+COMP3605,Programming 3,3,2,COMP2606,3,2022
+FOUN1301,Computer Networks,3,2,MATH2250,2,2022
+COMP2605,Introduction to Computing Concepts,3,2,COMP1600,3,2023
+COMP3608,Computer Networks,3,1,COMP1603,2,2023
+COMP3606,Object-Oriented Programming II,3,3,COMP3605,3,2022
+COMP3608,Mathematics for Computing,3,4,COMP1603,3,2022
+COMP3605,Introduction to Data Analytics,3,4,COMP3605,3,2023
+COMP3605,Introduction to Information Technology Concepts,3,3,COMP3605,3,2021
+MATH2250,Law,3,1,COMP1602,2,2021
+COMP3601,Intelligent Systems,3,1,COMP1604,3,2025
+FOUN1101,Programming 3,3,0,COMP1602,1,2022
+MATH2250,Industrial Statistics,3,5,INFO2601,1,2024
+COMP1603,Information Systems Security,3,1,COMP1602,1,2024
+COMP2602,Information Systems Security,3,2,COMP1602,1,2024
+COMP3601,Programming 2,3,2,MATH2250,1,2022
+COMP3606,Law,3,3,COMP1600,2,2025
+INFO1601,Enterprise Database Systems,3,5,COMP1603,1,2024
+COMP2603,Software Engineering 1,3,2,INFO2601,1,2022
+FOUN1101,Computer Networks,3,1,INFO2601,1,2023
+COMP3605,Economy and Society,3,0,COMP2611,1,2023
+COMP1601,Fundamental Mathematics for the General Sciences 1,3,3,COMP1604,3,2024
+FOUN1301,Big Data Analytics,3,3,MATH2250,1,2022
+MATH2250,Data Structures,3,5,COMP2611,1,2025
+MATH1115,Object-Oriented Programming II,3,5,COMP1602,2,2024
+MATH2250,Intelligent Systems,3,0,COMP1603,2,2023
+FOUN1101,Scientific and Technical Writing,3,3,COMP2611,2,2021
+INFO2602,Introduction to Computing Concepts,3,4,COMP2611,1,2024
+COMP2605,Mathematics for Computing,3,1,COMP1603,3,2023
+COMP2605,Introduction to WWW Programming,3,3,MATH2250,2,2025
+INFO1600,Computer Architecture,3,4,COMP1604,1,2023
+COMP3602,Computer Networks,3,0,INFO2601,1,2025
+COMP1603,Web Programming and Technologies 1,3,5,INFO2601,2,2025
+COMP3608,Fundamental Mathematics for the General Sciences 1,3,2,COMP3605,1,2024
+COMP2611,Information Systems Security,3,1,COMP2606,1,2023
+MATH2250,Computer Architecture,3,5,MATH2250,2,2021
+INFO1600,Object-Oriented Programming II,3,0,COMP3605,2,2024
+COMP3603,Industrial Statistics,3,5,COMP1603,3,2023
+INFO3604,Object-Oriented Programming 1,3,1,COMP3605,3,2024
+COMP3601,Software Engineering 1,3,3,INFO2601,1,2024
+INFO1601,Theory of Computing,3,2,COMP1602,2,2025
+MATH1115,Industrial Statistics,3,3,COMP2611,2,2022
+COMP3607,Web Programming and Technologies 1,3,2,COMP3605,2,2024
+COMP3610,Law,3,5,MATH2250,2,2025
+COMP3601,Game Programming,3,1,COMP3605,2,2023
+COMP3606,Intelligent Systems,3,3,COMP2611,2,2022
+INFO2604,Programming 3,3,1,COMP2611,3,2022
+COMP3607,Theory of Computing,3,2,COMP1602,2,2025
+COMP2604,Introduction to Computing Concepts,3,5,MATH2250,3,2021
+COMP2606,Economy and Society,3,5,COMP2611,3,2024
+COMP1600,Human-Computer Interaction,3,2,COMP1602,3,2021
+COMP1604,Operating Systems,3,1,COMP2606,2,2022
+COMP3607,Computer Networks,3,5,COMP1604,1,2023
+COMP2606,Operating Systems,3,2,COMP3605,3,2021
+COMP1604,Introduction to WWW Programming,3,4,MATH2250,2,2023
+COMP1603,Game Programming,3,3,COMP3605,1,2023
+COMP1604,Programming 3,3,0,COMP3605,2,2023
+COMP1600,Operating Systems,3,2,MATH2250,1,2023
+COMP3609,Design and Analysis of Algorithms,3,3,MATH2250,1,2022
+COMP3610,Caribbean Civilization,3,2,INFO2601,1,2025
+FOUN1301,Industrial Statistics,3,2,COMP2606,1,2025
+COMP3610,Law,3,5,MATH2250,1,2023
+COMP3601,Introduction to Data Analytics,3,4,COMP3605,2,2021
+COMP3608,Scientific and Technical Writing,3,4,COMP1603,2,2021
+INFO1601,Mathematics for Computing,3,4,COMP3605,2,2022
+COMP2604,Computer Networks,3,1,MATH2250,1,2022
+INFO1600,Wireless and Mobile Computing,3,4,MATH2250,2,2023
+COMP1600,Programming 3,3,3,INFO2601,2,2025
+COMP1600,Programming 2,3,0,INFO2601,1,2022
+COMP3608,Caribbean Civilization,3,5,COMP1603,3,2023
+COMP1601,Introduction to Information Technology Concepts,3,2,COMP1602,1,2022
+COMP1601,Introduction to Computing Concepts,3,4,COMP2606,2,2022
+COMP1602,Governance,3,3,COMP1604,2,2023
+COMP3610,Design and Analysis of Algorithms,3,3,COMP2611,2,2022
+COMP2603,Introduction to Computing Concepts,3,0,COMP2611,3,2025
+COMP1603,Object-Oriented Programming 1,3,0,COMP1603,3,2023
+COMP3603,Introduction to Information Technology Concepts,3,4,COMP1604,1,2024
+INFO3604,Object-Oriented Programming 1,3,3,COMP2611,3,2024
+COMP2601,Software Engineering 1,3,1,COMP1602,3,2022
+COMP1600,Introduction to WWW Programming,3,2,COMP1600,2,2021
+INFO2602,Programming 1,3,5,INFO2601,1,2025
+COMP3602,Introduction to Information Technology Concepts,3,1,COMP1604,1,2025
+COMP3607,Web Programming and Technologies 1,3,2,COMP1602,1,2021
+COMP3607,Object-Oriented Programming 1,3,0,COMP1604,2,2023
+INFO1601,Data Structures,3,2,COMP1600,2,2023
+COMP2611,Wireless and Mobile Computing,3,1,COMP1604,1,2021
+COMP3603,Project,3,4,COMP1604,1,2023
+INFO1600,Game Programming,3,3,COMP2606,3,2021
+INFO1600,Operating Systems,3,1,COMP1600,1,2025
+COMP2602,Big Data Analytics,3,2,COMP1603,3,2023
+COMP3610,Mathematics for Computing,3,5,COMP1604,2,2023
+COMP2604,Enterprise Database Systems,3,4,INFO2601,2,2022
+COMP2605,Game Programming,3,3,COMP1602,1,2023
+INFO2602,Big Data Analytics,3,4,COMP2611,3,2024
+COMP2604,Mathematics for Computing,3,5,COMP1602,1,2021
+INFO2602,Game Programming,3,3,INFO2601,2,2025
+COMP2611,Introduction to WWW Programming,3,4,INFO2601,1,2024
+COMP2604,Data Structures,3,3,COMP3605,2,2023
+INFO3604,Industrial Statistics,3,0,COMP1603,3,2024
+INFO1601,Introduction to WWW Programming,3,0,COMP1604,3,2024
+COMP3610,Game Programming,3,2,COMP3605,1,2023
+COMP1604,Object-Oriented Programming 1,3,4,MATH2250,3,2021
+FOUN1301,Programming 1,3,5,INFO2601,3,2025
+COMP3603,Programming 1,3,0,MATH2250,2,2024
+COMP2606,Programming 3,3,0,COMP1603,1,2023
+COMP3608,Law,3,4,MATH2250,2,2023
+COMP2603,Information Systems Security,3,3,COMP3605,1,2021
+FOUN1301,Information Systems Security,3,5,COMP2611,2,2022
+COMP3609,Introduction to WWW Programming,3,0,COMP2611,2,2024
+COMP2606,Governance,3,4,INFO2601,3,2021
+COMP2603,Enterprise Database Systems,3,0,COMP2611,1,2023
+COMP1603,Big Data Analytics,3,3,COMP1604,1,2023
+INFO2604,Introduction to Computing Concepts,3,0,COMP1603,2,2024
+COMP2611,Computer Networks,3,3,MATH2250,1,2021
+COMP2606,Human-Computer Interaction,3,2,INFO2601,2,2025
+COMP1600,Introduction to Computing Concepts,3,5,COMP1602,1,2021
+COMP3601,Industrial Statistics,3,1,COMP1604,1,2025
+MATH2250,Programming 2,3,3,COMP3605,1,2023
+INFO2602,Governance,3,1,COMP1604,2,2024
+COMP3601,Fundamental Mathematics for the General Sciences 1,3,1,COMP1600,2,2021
+INFO2602,Law,3,5,COMP1602,1,2023
+COMP2601,Economy and Society,3,0,COMP1604,3,2024
+COMP3601,Design and Analysis of Algorithms,3,5,COMP1603,1,2025
+COMP2603,Introduction to Data Analytics,3,2,COMP1600,1,2025
+COMP1604,Web Programming and Technologies 1,3,1,COMP2611,1,2021
+COMP3607,Web Programming and Technologies 1,3,4,COMP1603,2,2024
+INFO2604,Industrial Statistics,3,0,COMP1603,2,2021
+COMP3603,Design and Analysis of Algorithms,3,2,COMP1604,1,2025
+INFO1601,Object-Oriented Programming II,3,3,COMP2606,2,2024
+COMP3606,Introduction to Data Analytics,3,5,INFO2601,3,2024
+FOUN1301,Data Structures,3,4,MATH2250,3,2021
+COMP3610,Information Systems Security,3,2,COMP2606,3,2023
+COMP2602,Fundamental Mathematics for the General Sciences 1,3,1,COMP1604,3,2023
+COMP1602,Big Data Analytics,3,2,COMP1602,2,2021
+INFO2604,Governance,3,2,COMP1602,1,2023
+INFO3604,Introduction to Information Technology Concepts,3,1,COMP2606,3,2022
+COMP3601,Industrial Statistics,3,3,COMP1604,3,2022
+COMP3605,Project,3,3,COMP1603,3,2024
+COMP3603,Computer Architecture,3,2,COMP2611,1,2025
+INFO2602,Big Data Analytics,3,5,MATH2250,1,2022
+MATH1115,Object-Oriented Programming 1,3,3,COMP1604,1,2025
+INFO2604,Programming 3,3,5,COMP3605,1,2025
+FOUN1301,Introduction to WWW Programming,3,0,INFO2601,1,2025
+COMP1604,Industrial Statistics,3,1,COMP1603,2,2021
+COMP3605,Game Programming,3,1,COMP3605,2,2023
+INFO2604,Computer Networks,3,1,MATH2250,2,2022
+COMP2603,Caribbean Civilization,3,4,INFO2601,1,2025
+COMP3607,Enterprise Database Systems,3,1,COMP2611,2,2022
+INFO1600,Big Data Analytics,3,4,COMP1603,3,2024
+COMP3607,Design and Analysis of Algorithms,3,0,MATH2250,2,2024
+COMP2605,Theory of Computing,3,3,MATH2250,3,2021
+FOUN1105,Game Programming,3,1,COMP1602,2,2024
+COMP3605,Computer Networks,3,5,COMP1600,3,2025
+COMP2604,Computer Networks,3,2,COMP1604,2,2023
+INFO2604,Object-Oriented Programming II,3,2,COMP1603,2,2024
+COMP2611,Programming 1,3,0,COMP1603,1,2023
+COMP3606,Industrial Statistics,3,5,INFO2601,1,2024
+INFO3604,Law,3,1,MATH2250,1,2025
+MATH1115,Mathematics for Computing,3,4,COMP1603,1,2025
+COMP3609,Mathematics for Computing,3,3,COMP3605,3,2025
+COMP1604,Computer Architecture,3,2,INFO2601,3,2024
+INFO2602,Industrial Statistics,3,5,COMP3605,3,2022
+COMP1603,Information Systems Security,3,3,COMP2606,2,2025
+COMP1604,Human-Computer Interaction,3,0,COMP2606,3,2025
+COMP2602,Industrial Statistics,3,1,COMP1604,3,2022
+COMP2602,Game Programming,3,2,COMP3605,2,2022
+FOUN1105,Project,3,3,COMP2606,1,2023
+COMP2605,Programming 2,3,3,COMP1603,2,2021
+INFO2602,Wireless and Mobile Computing,3,4,COMP1604,2,2024
+COMP2606,Mathematics for Computing,3,2,MATH2250,3,2025
+FOUN1105,Programming 1,3,0,COMP2606,1,2021
+COMP3609,Programming 2,3,2,MATH2250,2,2025
+INFO2604,Project,3,0,MATH2250,1,2021
+COMP3605,Intelligent Systems,3,1,COMP3605,1,2025
+COMP3608,Operating Systems,3,5,COMP2606,2,2024
+COMP2603,Data Structures,3,3,COMP1604,3,2022
+MATH1115,Scientific and Technical Writing,3,5,COMP1602,3,2025
+COMP1602,Human-Computer Interaction,3,1,COMP1604,1,2021
+FOUN1101,Human-Computer Interaction,3,0,INFO2601,3,2023
+COMP3601,Software Engineering 1,3,2,INFO2601,1,2022
+COMP3608,Introduction to Data Analytics,3,0,COMP1602,1,2024
+COMP2601,Project,3,2,INFO2601,1,2024
+COMP3610,Design and Analysis of Algorithms,3,3,COMP1603,2,2025
+COMP3607,Game Programming,3,1,COMP2611,1,2022
+COMP1601,Governance,3,2,COMP2606,1,2022
+COMP2605,Computer Networks,3,5,COMP1600,1,2023
+INFO2602,Computer Networks,3,1,INFO2601,2,2024
+COMP2605,Web Programming and Technologies 1,3,4,MATH2250,3,2024
+COMP1603,Caribbean Civilization,3,5,COMP1602,1,2025
+COMP2601,Object-Oriented Programming 1,3,0,COMP1600,2,2024
+MATH1115,Introduction to Computing Concepts,3,2,COMP1600,3,2021
+COMP2605,Wireless and Mobile Computing,3,0,COMP3605,3,2021
+COMP3601,Theory of Computing,3,3,COMP2606,3,2021
+FOUN1105,Software Engineering 1,3,4,MATH2250,1,2022
+COMP2603,Enterprise Database Systems,3,2,COMP1603,2,2021
+COMP2605,Wireless and Mobile Computing,3,4,COMP3605,1,2024
+INFO1600,Design and Analysis of Algorithms,3,4,COMP2611,1,2024
+COMP1604,Mathematics for Computing,3,4,COMP1604,1,2025
+INFO1600,Big Data Analytics,3,3,COMP1600,1,2021
+COMP2603,Data Structures,3,3,INFO2601,2,2025
+FOUN1105,Data Structures,3,4,COMP1603,3,2022
+COMP1601,Object-Oriented Programming II,3,5,INFO2601,2,2023
+COMP3607,Introduction to Information Technology Concepts,3,3,COMP1603,3,2021
+INFO2602,Introduction to Information Technology Concepts,3,5,COMP1604,2,2021
+COMP3601,Computer Networks,3,0,COMP1603,1,2025
+COMP2606,Fundamental Mathematics for the General Sciences 1,3,1,COMP2606,2,2023
+COMP3603,Design and Analysis of Algorithms,3,5,COMP1602,2,2025
+INFO3604,Wireless and Mobile Computing,3,1,MATH2250,2,2024
+COMP2603,Intelligent Systems,3,5,MATH2250,2,2021
+COMP2605,Web Programming and Technologies 1,3,0,COMP2611,2,2021
+COMP1600,Computer Networks,3,4,INFO2601,2,2024
+COMP3608,Human-Computer Interaction,3,5,COMP1604,2,2023
+COMP2605,Project,3,1,COMP1600,2,2025
+MATH2250,Economy and Society,3,5,COMP1603,1,2023
+COMP3609,Design and Analysis of Algorithms,3,2,COMP1602,2,2022
+COMP3607,Introduction to WWW Programming,3,0,INFO2601,3,2023
+COMP2605,Software Engineering 1,3,4,COMP3605,1,2024
+COMP3605,Intelligent Systems,3,2,COMP1600,1,2025
+COMP1604,Project,3,5,INFO2601,3,2022
+COMP2602,Game Programming,3,4,COMP1603,2,2021
+INFO2602,Operating Systems,3,0,COMP2611,3,2021
+COMP2604,Object-Oriented Programming 1,3,1,COMP1602,2,2022
+FOUN1301,Programming 3,3,3,COMP1604,2,2023
+COMP3608,Theory of Computing,3,2,COMP1602,1,2025
+COMP3602,Web Programming and Technologies 1,3,1,COMP1603,3,2025
+INFO3604,Theory of Computing,3,1,MATH2250,1,2025
+COMP1600,Introduction to Computing Concepts,3,0,COMP1600,1,2025
+FOUN1105,Law,3,5,MATH2250,1,2021
+FOUN1101,Web Programming and Technologies 1,3,3,COMP1600,1,2023
+INFO2604,Object-Oriented Programming II,3,0,COMP1603,1,2024
+COMP3601,Enterprise Database Systems,3,0,COMP3605,1,2023
+COMP3609,Computer Architecture,3,0,COMP3605,3,2021
+COMP2602,Programming 1,3,0,COMP2611,3,2024
+COMP2603,Introduction to Data Analytics,3,0,COMP1602,3,2021
+COMP2603,Introduction to Computing Concepts,3,3,COMP3605,3,2024
+FOUN1101,Design and Analysis of Algorithms,3,0,COMP1600,1,2024
+COMP3601,Enterprise Database Systems,3,5,COMP1600,1,2022
+COMP3608,Wireless and Mobile Computing,3,4,COMP2606,3,2024
+COMP3603,Mathematics for Computing,3,0,COMP3605,3,2024
+COMP3606,Introduction to WWW Programming,3,5,COMP2606,2,2022
+COMP1601,Fundamental Mathematics for the General Sciences 1,3,0,COMP1604,2,2025
+COMP3601,Information Systems Security,3,0,COMP1603,3,2024
+INFO1601,Data Structures,3,2,COMP3605,1,2021
+COMP3603,Programming 2,3,5,COMP1604,3,2021
+INFO2602,Human-Computer Interaction,3,0,COMP1600,2,2025
+COMP3605,Object-Oriented Programming II,3,4,COMP1603,2,2021
+COMP1604,Human-Computer Interaction,3,2,COMP1600,2,2021
+FOUN1105,Information Systems Security,3,5,COMP1600,2,2024
+COMP3601,Introduction to Data Analytics,3,0,COMP1603,2,2022
+COMP1602,Human-Computer Interaction,3,5,COMP1602,3,2024
+INFO2602,Economy and Society,3,2,COMP1602,1,2025
+COMP3601,Caribbean Civilization,3,0,COMP2611,1,2025
+COMP2605,Big Data Analytics,3,2,COMP1603,1,2023
+MATH2250,Computer Architecture,3,4,COMP1604,3,2024
+COMP2611,Introduction to Computing Concepts,3,0,COMP1602,1,2021
+COMP3606,Fundamental Mathematics for the General Sciences 1,3,1,COMP1603,3,2023
+MATH2250,Industrial Statistics,3,0,COMP3605,2,2025
+MATH2250,Introduction to WWW Programming,3,2,COMP1600,3,2024
+INFO1601,Programming 1,3,3,COMP1603,1,2023
+COMP1602,Economy and Society,3,4,COMP2606,1,2025
+COMP3607,Industrial Statistics,3,5,INFO2601,1,2025
+COMP1602,Web Programming and Technologies 1,3,1,COMP1604,1,2024
+MATH2250,Big Data Analytics,3,3,INFO2601,3,2025
+FOUN1301,Industrial Statistics,3,3,COMP1604,3,2021
+COMP3605,Economy and Society,3,2,COMP1603,1,2023
+COMP1601,Design and Analysis of Algorithms,3,4,COMP2606,1,2024
+COMP2603,Computer Networks,3,4,COMP2606,1,2024
+INFO2604,Industrial Statistics,3,2,INFO2601,3,2025
+INFO3604,Mathematics for Computing,3,3,COMP2611,3,2023
+INFO2604,Law,3,1,COMP3605,3,2024
+COMP3607,Enterprise Database Systems,3,1,COMP3605,3,2021
+FOUN1101,Operating Systems,3,3,MATH2250,3,2022
+MATH1115,Economy and Society,3,1,COMP1603,1,2021
+INFO2602,Object-Oriented Programming 1,3,0,INFO2601,3,2021
+MATH1115,Programming 2,3,4,INFO2601,1,2024
+MATH1115,Law,3,1,COMP1604,3,2024
+COMP1602,Intelligent Systems,3,1,COMP1604,1,2024
+COMP1602,Programming 3,3,0,COMP2611,1,2025
+COMP2605,Governance,3,1,COMP1604,2,2022
+COMP1601,Web Programming and Technologies 1,3,5,COMP1604,3,2023
+COMP3610,Object-Oriented Programming 1,3,1,COMP1604,1,2022
+INFO3604,Scientific and Technical Writing,3,0,MATH2250,2,2025
+COMP3603,Intelligent Systems,3,0,COMP3605,3,2023
+COMP2603,Operating Systems,3,3,MATH2250,3,2024
+COMP3610,Human-Computer Interaction,3,0,COMP1600,2,2024
+FOUN1101,Intelligent Systems,3,3,COMP1604,1,2025
+COMP2601,Computer Networks,3,1,COMP1600,3,2024
+FOUN1105,Caribbean Civilization,3,3,COMP1604,2,2024
+INFO1600,Design and Analysis of Algorithms,3,1,MATH2250,2,2023
