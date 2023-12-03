@@ -2,12 +2,12 @@ from App.models import ProgramCourses, Program, Course
 from App.controllers import (get_program_by_name, get_program_by_id, get_course_by_courseCode)
 from App.database import db
 
-def create_programCourse(programName, code, num):
+def create_programCourse(programName, code, num, semester, year):
     program = get_program_by_name(programName)
     if program:
         course = get_course_by_courseCode(code)
         if course:
-            proCourse = ProgramCourses(program.id, code, num)
+            proCourse = ProgramCourses(program.id, code, num, semester, year)
             db.session.add(proCourse)
             db.session.commit()
             return proCourse

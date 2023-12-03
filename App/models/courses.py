@@ -7,6 +7,8 @@ class Course(db.Model):
     courseName = db.Column(db.String(25))
     credits = db.Column(db.Integer)
     rating = db.Column(db.Integer)
+    semester = db.Column(db.Integer, nullable=False)
+    year = db.Column(db.Integer, nullable=False)
 
     offered = db.relationship('CoursesOfferedPerSem', backref ='courses', lazy=True)
     students = db.relationship('StudentCourseHistory', backref='courses', lazy=True)
@@ -21,6 +23,8 @@ class Course(db.Model):
         self.courseName = name
         self.rating = rating
         self.credits = credits
+        self.semester = 0
+        self.year = 0
     
     def get_json(self):
         return{
@@ -28,4 +32,6 @@ class Course(db.Model):
             'Course Name: ': self.courseName,
             'Course Rating: ': self.rating,
             'No. of Credits: ': self.credits,
+            'Semester: ': self.semester,
+            'Year: ': self.year
         }

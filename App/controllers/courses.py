@@ -10,10 +10,10 @@ def createPrerequistes(prereqs, courseName):
         if prereq_course:
             create_prereq(prereq_code,courseName) 
 
-def create_course(code, name, rating, credits, prereqs):
+def create_course(code, name, rating, credits, prereqs, semester, year):
     already = get_course_by_courseCode(code)
     if already is None:
-        course = Course(code, name, rating, credits)
+        course = Course(code, name, rating, credits, semester, year)
 
         if prereqs:
             createPrerequistes(prereqs, name)
