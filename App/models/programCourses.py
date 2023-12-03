@@ -11,7 +11,7 @@ class ProgramCourses(db.Model):
     associated_program = db.relationship('Program', back_populates='courses', overlaps="program")
     associated_course = db.relationship('Course', back_populates='programs', overlaps="courses")
 
-    def __init__(self, programID, courseCode, num):
+    def __init__(self, programID, courseCode, num, semester, year):
         self.program_id = programID
         self.code = courseCode
         self.courseType = num
@@ -23,7 +23,7 @@ class ProgramCourses(db.Model):
             'Program Course ID:' : self.id,
             'Program ID:': self.program_id,
             'Course Code: ': self.code,
-            'Course Type: ': self.courseType
+            'Course Type: ': self.courseType,
             'Semester: ': self.semester,
             'Year: ': self.year
         }
