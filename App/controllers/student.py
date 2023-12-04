@@ -53,4 +53,14 @@ def verify_student(username):
         return True
     return False
 
+def getStudentCourseHistory(student_id):
+    student = get_student_by_id(student_id)
+    if student:
+        return student.course_history
+    return None
 
+def getStudentIdbyName(name):
+    student = Student.query.filter_by(name=name).first()
+    if student:
+        return student.id
+    return None

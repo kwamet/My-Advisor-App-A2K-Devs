@@ -18,7 +18,7 @@ class Course(db.Model):
     # planIds = db.relationship('CoursePlanCourses', backref='courses', lazy=True)
    
     
-    def __init__(self, code, name, rating, credits):
+    def __init__(self, code, name, rating, credits, semester, year):
         self.courseCode = code
         self.courseName = name
         self.rating = rating

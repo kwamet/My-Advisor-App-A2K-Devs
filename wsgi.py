@@ -1,5 +1,5 @@
 import click, pytest, sys
-import csv
+import csv, random
 from flask import Flask
 from App.controllers.student import create_student
 from flask.cli import with_appcontext, AppGroup
@@ -54,7 +54,8 @@ def initialize():
     create_staff("adminpass","999", "admin")
     
     for c in test1:
-        addCoursetoHistory(816, c)
+        score = random.randint(1,100)
+        addCoursetoHistory(816, c, score)
     print('Student course history updated')
 
     with open(file_path, 'r') as file:

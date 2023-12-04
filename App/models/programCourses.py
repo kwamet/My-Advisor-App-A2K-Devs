@@ -11,12 +11,10 @@ class ProgramCourses(db.Model):
     associated_program = db.relationship('Program', back_populates='courses', overlaps="program")
     associated_course = db.relationship('Course', back_populates='programs', overlaps="courses")
 
-    def __init__(self, programID, courseCode, num, semester, year):
+    def __init__(self, programID, courseCode, num):
         self.program_id = programID
         self.code = courseCode
         self.courseType = num
-        self.semester = semester
-        self.year = year
     
     def get_json(self):
         return{
@@ -24,6 +22,4 @@ class ProgramCourses(db.Model):
             'Program ID:': self.program_id,
             'Course Code: ': self.code,
             'Course Type: ': self.courseType,
-            'Semester: ': self.semester,
-            'Year: ': self.year
         }

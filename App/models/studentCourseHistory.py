@@ -10,14 +10,14 @@ class StudentCourseHistory(db.Model):
     associated_course = db.relationship('Course', back_populates='students', overlaps="courses")
     associated_student = db.relationship('Student', back_populates='courses', overlaps="student")
 
-    def __init__(self, id, courseCode):
+    def __init__(self, id, courseCode, score):
         self.studentID = id
         self.code = courseCode
-        self.grade = None
+        self.score = score
     
     def get_json(self):
         return{
             'Program ID': self.id,  
             'Course Code': self.code,
-            'Grade': self.grade
+            'Score': self.score
         }

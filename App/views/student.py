@@ -17,7 +17,10 @@ from App.controllers import (
     getCompletedCourseCodes,
     generator,
     addCourseToPlan,
-    verify_student
+    verify_student,
+    getStudentCourseHistory,
+    updateScore,
+    getStudentCourseHistoryJSON,
 )
 
 student_views = Blueprint('student_views', __name__, template_folder='../templates')
@@ -51,7 +54,7 @@ def create_student_route():
 def add_course_to_student_route():
     student_id = request.json['student_id']
     course_code = request.json['course_code']
-    grade = request.json['grade']
+    score = request.json['score']
 
     username=current_user.username
     if not verify_student(username):    #verify that the user is logged in
@@ -71,13 +74,13 @@ def add_course_to_student_route():
 
     # Check if the course is already in the student's completed courses
     completed_courses = getCompletedCourseCodes(student_id)
-    if course_code in completed_courses and grade < 50:
-        updateGrade(student_id, course_code, grade)
-        return jsonify({'Success': 'Course grade updated'}), 200
-    elif course_code in completed_courses and grade >= 50:
+    if course_code in completed_courses and score < 50:
+        updateScore(student_id, course_code, score)
+        return jsonify({'Success': 'Course score updated'}), 200
+    elif course_code in completed_courses and score >= 50:
         return jsonify({'Error': 'Course already completed'}), 400
         
-    addCoursetoHistory(student_id, course_code, grade)
+    addCoursetoHistory(student_id, course_code, score)
     return jsonify({'Success!': f"Course {course_code} added to student {student_id}'s course history"}), 200
 
 
@@ -111,6 +114,29 @@ def create_student_plan_route():
     
     return jsonify("Invalid command. Please enter 'electives', 'easy', 'fastest', or a valid course code."), 400
 
+##Get student course history
+@student_views.route('/student/all_course_history', methods=['GET'])
+@login_required
+def get_all_student_course_history_route():
+    username = current_user.username
+    if not verify_student(username):
+        return jsonify({'message': 'You are unauthorized to perform this action. Please login with Student credentials.'}), 401
+
+    requested_student_id = request.args.get('student_id')
+    if not requested_student_id:
+        return jsonify({'Error': 'Student ID is required'}), 400 
+
+    if str(requested_student_id) != username:
+        return jsonify({'Error': 'Unauthorized to view other student\'s course history'}), 403
+
+    student = get_student_by_id(requested_student_id)
+    if not student:
+        return jsonify({'Error': 'Student not found'}), 400
+
+    courses = getStudentCourseHistoryJSON(requested_student_id)
+    return jsonify({'Success!': f"Student {requested_student_id} course history", "courses" : courses}), 200
 
 
+        
+    
     

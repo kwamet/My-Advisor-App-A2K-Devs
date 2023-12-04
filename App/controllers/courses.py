@@ -24,28 +24,31 @@ def create_course(code, name, rating, credits, prereqs, semester, year):
     else:
         return None
 
-
 def createCoursesfromFile(file_path):
     try:
         with open(file_path, 'r') as file:
             csv_reader = csv.DictReader(file)
             for row in csv_reader:
-                courseCode = row["courseCode"]
-                courseName = row["courseName"]
-                credits = int(row["numCredits"])
-                rating = int(row["rating"])
-                prerequisites_codes = row["preReqs"].split(',')
+                if not row['courseCode']:  # Skip empty lines
+                    continue
+                try:
+                    courseCode = row["courseCode"]
+                    courseName = row["courseName"]
+                    credits = int(row["numCredits"])
+                    rating = int(row["rating"])
+                    prerequisites_codes = row["preReqs"].split(',')
+                    semester = int(row["semesterOffered"])
+                    year = int(row["yearOffered"])
 
-                create_course(courseCode, courseName, rating, credits, prerequisites_codes)
-                
+                    course = create_course(courseCode, courseName, rating, credits, prerequisites_codes, semester, year)
+                    print(f"Course Added: {courseName} ({courseCode})")
+
+                except ValueError as e:
+                    print(f"Error processing line: {row}. Error: {e}")
+
     except FileNotFoundError:
         print("File not found.")
 
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        return False
-    
-    print("Courses added successfully.")
     
 def get_course_by_courseCode(code):
     return Course.query.filter_by(courseCode=code).first()

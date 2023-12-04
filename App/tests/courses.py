@@ -63,6 +63,8 @@ def test_create_course():
     credits = 3
     rating = 4 
     prereqs=[]
+    year=2020
+    semester=1
 
     course = create_course(courseCode, courseName, rating, credits, prereqs)
 
