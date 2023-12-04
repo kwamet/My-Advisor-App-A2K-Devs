@@ -174,6 +174,72 @@ def create_app(config_overrides={}):
         courses = Course.query.all()
         programs = Program.query.all()
         return render_template('studentDashboard.html', courses=courses, programs=programs)
+    
+    @app.route('/search_programs', methods=['GET'])
+    def search_programs():
+        query = request.args.get('program_query', '')
+
+        # Perform the search for programs based on program name
+        programs = Program.query.filter(Program.name.ilike(f"%{query}%")).all()
+
+        # Fetch the list of courses
+        courses = Course.query.all()
+
+        return render_template('studentDashboard.html', courses=courses, programs=programs)
+
+    @app.route('/search_courses', methods=['GET'])
+    def search_courses():
+        query = request.args.get('query', '')
+
+        # Perform the search for courses based on course code or name
+        courses = Course.query.filter(
+            (Course.courseCode.ilike(f"%{query}%")) | (Course.courseName.ilike(f"%{query}%"))
+        ).all()
+
+        # Fetch the list of programs
+        programs = Program.query.all()
+
+        return render_template('studentDashboard.html', courses=courses, programs=programs)
+
+    @app.route('/course_plan')
+    def course_plan():
+        return render_template('coursePlan.html')
+    
+    
+    @app.route('/enroll_program/<program_id>', methods=['POST'])
+    def enroll_program(program_id):
+        """
+        current_user = current_user.id
+
+        # Check if the user is a student
+        if isinstance(current_user, Student):
+            # Find the program by ID
+            program = Program.query.get(program_id)
+
+            # Enroll the student in the program
+            current_user.program_id = program.id
+            db.session.commit()
+        """
+        return redirect(url_for('student_dashboard'))
+    
+    @app.route('/add_to_course_history/<course_code>', methods=['POST'])
+    def add_to_course_history(course_code):
+        
+        """
+        current_user = get_current_user()
+
+        # Check if the user is a student
+        if isinstance(current_user, Student):
+            # Find the course by course code
+            course = Course.query.filter_by(courseCode=course_code).first()
+
+            # Add the course to the user's course history
+            current_user.courses.append(course)
+            db.session.commit()
+        """
+
+        return redirect(url_for('student_dashboard'))
+    
 
     app.app_context().push()
     return app
