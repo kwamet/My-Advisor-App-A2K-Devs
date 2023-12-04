@@ -7,10 +7,10 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
+            margin: 20px 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             background: linear-gradient(to right, #4CAF50, #3498db);
@@ -32,6 +32,8 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -46,13 +48,66 @@
             color: #555;
         }
 
-        input {
-            width: 100%;
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
             padding: 8px;
             margin-bottom: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
+        }
+
+        /* Hide radio buttons and use the label as a switch */
+        input[type="radio"] {
+            display: none;
+        }
+
+        .switch-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .switch-label {
+            position: relative;
+            padding: 5px;
+            background-color: #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 5px;
+            width: auto; /* Set to auto to span the length of the text */
+        }
+
+        .switch-radio:checked + .switch-label {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .switch-label::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            width: calc(100% - 10px);
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .switch-radio:checked + .switch-label::before {
+            transform: translateX(calc(100% - 5px)) translateY(-50%);
+        }
+
+        .switch-text {
+            position: relative;
+            z-index: 1;
+            color: #000; /* Set the text color */
         }
 
         button {
@@ -68,6 +123,42 @@
         button:hover {
             background-color: #45a049;
         }
+
+        .signup-container {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .signup-link {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .signup-link:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -80,17 +171,26 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         
-        <label>User Type:</label>
-        <input type="radio" id="student" name="user_type" value="student" required>
-        <label for="student">Student</label>
+        <!-- Switch container for user type -->
+        <div class="switch-container">
+            <input type="radio" id="student" class="switch-radio" name="user_type" value="student" required>
+            <label class="switch-label" for="student">
+                <span class="switch-text">Student</span>
+            </label>
 
-        <input type="radio" id="staff" name="user_type" value="staff" required>
-        <label for="staff">Staff</label>
+            <input type="radio" id="staff" class="switch-radio" name="user_type" value="staff" required>
+            <label class="switch-label" for="staff">
+                <span class="switch-text">Staff</span>
+            </label>
+        </div>
 
         <button type="submit">Login</button>
     </form>
 
-    <a href="{{ url_for('signup') }}">Sign Up</a>
+    <!-- Signup container below the login form -->
+    <div class="signup-container">
+        <a href="{{ url_for('signup') }}" class="signup-link">Sign Up</a>
+    </div>
 
 </body>
 </html>
