@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+
+        <!-- Search form for programs -->
+        <form action="{{ url_for('search_programs') }}" method="get">
+            <label for="program_search">Search for Program:</label>
+            <input type="text" id="program_search" name="program_query" placeholder="Enter program name">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Search form for courses -->
+        <form action="{{ url_for('search_courses') }}" method="get">
+            <label for="course_search">Search for Course:</label>
+            <input type="text" id="course_search" name="query" placeholder="Enter course code or name">
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Button to generate course plan and go to coursePlan.html -->
+        <a href="{{ url_for('course_plan') }}"><button type="button">Generate Course Plan</button></a>
+
+    <h2>List of Courses:</h2>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.courseCode }} - {{ course.courseName }}
+                <!-- Add the "Add to Course History" button with a form -->
+                <form action="{{ url_for('add_to_course_history', course_code=course.courseCode) }}" method="post">
+                    {{ csrf_token }}
+                    <button type="submit">Add</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>List of Programs:</h2>
+    <ul>
+        {% for program in programs %}
+            <li>{{ program.name }} - Core Credits: {{ program.core_credits }}, Elective Credits: {{ program.elective_credits }}, Foundation Credits: {{ program.foun_credits }}
+                <!-- Add the "Enroll in Program" button with a form -->
+                <form action="{{ url_for('enroll_program', program_id=program.id) }}" method="post">
+                {{ csrf_token }}
+                <button type="submit">Enroll</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('login') }}">Logout</a>
+</body>
+</html>
