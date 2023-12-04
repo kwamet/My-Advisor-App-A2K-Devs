@@ -73,14 +73,24 @@
 <body>
     <form action="/signup" method="post">
         <h1>My Advisor App</h1>
+        
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
+        
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+
+        <label>User Type:</label>
+        <input type="radio" id="student" name="user_type" value="student" required>
+        <label for="student">Student</label>
+
+        <input type="radio" id="staff" name="user_type" value="staff" required>
+        <label for="staff">Staff</label>
+
         <button type="submit">Sign Up</button>
     </form>
 
     <a href="{{ url_for('login') }}">Login</a>
-    
+
 </body>
 </html>
