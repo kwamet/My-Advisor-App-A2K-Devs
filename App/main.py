@@ -18,6 +18,10 @@ from App.controllers import (
 
 from App.views import views
 from App.models.user import User
+from App.models.courses import Course
+from App.models.program import Program
+from App.models.staff import Staff
+from App.models.student import Student
 
 def add_views(app):
     for view in views:
@@ -57,14 +61,27 @@ def create_app(config_overrides={}):
             # Retrieve form data
             username = request.form.get('username')
             password = request.form.get('password')
+            user_type = request.form['user_type']
 
             new_user = User(username=username, password=password)
             user = User.query.filter_by(username=username).first()
             db.session.add(new_user)
             db.session.commit()
 
-            # Redirect to a user dashboard
-            return redirect(url_for('staff_dashboard'))
+            if user_type == 'student':
+                new_student = Student(username=username, password=password, name=username, program_id="-")
+                db.session.add(new_student)
+
+                # Redirect to a user dashboard
+                return redirect(url_for('student_dashboard'))
+
+            elif user_type == 'staff':
+                new_staff = Staff(password=password, staff_id=username, name=username)
+                db.session.add(new_staff)
+                
+                # Redirect to a user dashboard
+                return redirect(url_for('staff_dashboard'))
+
 
         # Handle GET requests or form submission failure
         return render_template('signup.html')
@@ -80,26 +97,83 @@ def create_app(config_overrides={}):
             # Retrieve form data
             username = request.form.get('username')
             password = request.form.get('password')
+            user_type = request.form['user_type']
 
             # Perform login logic (e.g., validate credentials)
             user = User.query.filter_by(username=username).first()
 
             if user and user.check_password(password):
-                # Log in the user
-                login_user(user)
-                # Redirect to a success page or another route
-                return redirect(url_for('staff_dashboard'))
+                
+                if user_type == 'student':
+                    # Log in the user
+                    login_user(user)
+                    # Redirect to a student dashboard
+                    return redirect(url_for('student_dashboard'))
+
+                elif user_type == 'staff':
+                    # Log in the user
+                    login_user(user)
+                    # Redirect to a staff dashboard
+                    return redirect(url_for('staff_dashboard'))
 
         # Handle GET requests or form submission failure
         return render_template('login.html')
 
-    @app.route('/login/success')
-    def login_success():
-        return render_template('login_success.html')
-
-    @app.route('/staff-dashboard')
+    @app.route('/staff-dashboard', methods=['GET', 'POST'])
     def staff_dashboard():
-        return render_template('staffDashboard.html')
+
+        if request.method == 'POST':
+            course_code = request.form['course_code']
+            course_name = request.form['course_name']
+            credits = int(request.form['credits'])
+            rating = float(request.form['rating'])
+            semester = int(request.form['semester'])
+            year = int(request.form['year'])
+
+            new_course = Course(
+                code=course_code,
+                name=course_name,
+                credits=credits,
+                rating=rating,
+                semester=semester,
+                year=year
+            )
+
+            db.session.add(new_course)
+            db.session.commit()
+
+        courses = Course.query.all()
+        programs = Program.query.all()
+        return render_template('staffDashboard.html', courses=courses, programs=programs)
+    
+    @app.route('/add_program', methods=['GET', 'POST'])
+    def add_program():
+
+        if request.method == 'POST':
+            program_name = request.form['program_name']
+            core_credits = int(request.form['core_credits'])
+            elective_credits = int(request.form['elective_credits'])
+            foun_credits = int(request.form['foun_credits'])
+
+            new_program = Program(
+                name=program_name,
+                core=core_credits,
+                elective=elective_credits,
+                foun=foun_credits
+            )
+
+            db.session.add(new_program)
+            db.session.commit()
+
+        courses = Course.query.all()
+        programs = Program.query.all()
+        return render_template('staffDashboard.html', courses=courses, programs=programs)
+
+    @app.route('/student-dashboard')
+    def student_dashboard():
+        courses = Course.query.all()
+        programs = Program.query.all()
+        return render_template('studentDashboard.html', courses=courses, programs=programs)
 
     app.app_context().push()
     return app
