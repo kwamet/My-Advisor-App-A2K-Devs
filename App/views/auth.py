@@ -28,7 +28,7 @@ def get_user_page():
 def identify_page():
     return jsonify({'message': f"username: {current_user.username}, id : {current_user.id}"})
 
-
+"""
 @auth_views.route('/login', methods=['POST'])
 def login_action():
     data = request.form
@@ -37,7 +37,7 @@ def login_action():
         login_user(user)
         return jsonify({"token":jwt_authenticate(data['username'],data['password'])})
     return jsonify({"error":"invalid credentials"}), 401
-
+"""
 @auth_views.route('/logout', methods=['GET'])
 def logout_action():
     data = request.form
