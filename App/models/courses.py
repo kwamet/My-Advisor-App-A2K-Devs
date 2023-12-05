@@ -23,8 +23,8 @@ class Course(db.Model):
         self.courseName = name
         self.rating = rating
         self.credits = credits
-        self.semester = 0
-        self.year = 0
+        self.semester = semester
+        self.year = year
     
     def get_json(self):
         return{

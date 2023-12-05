@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, jsonify, request, send_from_directory, flash, redirect, url_for
 from flask_jwt_extended import jwt_required, current_user as jwt_current_user
 from flask_login import current_user, login_required
+import json
 from.index import index_views
 
 from App.controllers import (
@@ -21,6 +22,9 @@ from App.controllers import (
     getStudentCourseHistory,
     updateScore,
     getStudentCourseHistoryJSON,
+    course_offered,
+    create_CoursePlan,
+    getCoursePlan,
 )
 
 student_views = Blueprint('student_views', __name__, template_folder='../templates')
@@ -84,13 +88,65 @@ def add_course_to_student_route():
     return jsonify({'Success!': f"Course {course_code} added to student {student_id}'s course history"}), 200
 
 
-##Add course plan 
-
 @student_views.route('/student/create_student_plan', methods=['POST'])
 @login_required
 def create_student_plan_route():
     student_id = request.json['student_id']
-    command = request.json['command']
+    semester = request.json['semester']
+    year = request.json['year']
+
+    username=current_user.username
+    if not verify_student(username):    #verify that the student is logged in
+        return jsonify({'message': 'You are unauthorized to perform this action. Please login with Student credentials.'}), 401
+    
+    student = get_student_by_id(student_id)
+    if not student:
+        return jsonify({'Error': 'Student not found'}), 400
+
+    plan = getCoursePlan(student_id, semester, year)
+    if plan:
+        return jsonify({'Error': 'Course plan already exists'}), 400
+
+    plan = create_CoursePlan(student_id, semester, year)
+    return jsonify({'Success!': f"Course plan created for student {student_id}"}), 201
+
+@student_views.route('/student/get_student_plan', methods=['GET'])
+@login_required
+def get_student_plan_route():
+    student_id = request.args.get('student_id')
+    semester = request.args.get('semester')
+    year = request.args.get('year')
+
+    username=current_user.username
+    if not verify_student(username):    #verify that the student is logged in
+        return jsonify({'message': 'You are unauthorized to perform this action. Please login with Student credentials.'}), 401
+
+    if username != student_id:
+        return jsonify({'Error': 'Unauthorized to view other student\'s course plan'}), 403
+
+    student = get_student_by_id(student_id)
+    if not student:
+        return jsonify({'Error': 'Student not found'}), 400
+
+    plan = getCoursePlan(student_id, semester, year)
+    if not plan:
+        return jsonify({'Error': 'Course plan not found'}), 400
+
+    courses_data = json.loads(plan.courses_data) if plan.courses_data else []
+    return jsonify({'Success!': f"Course plan for student {student_id} in Semester {semester} {year}", "courses" :courses_data}), 200
+
+##Add course plan 
+
+@student_views.route('/student/populate_student_plan', methods=['POST'])
+@login_required
+def populate_student_plan_route():
+    data = request.json
+    student_id = data.get('student_id')
+    command = data.get('command')
+    semester = data.get('semester')
+    year = data.get('year')
+    
+    #return jsonify({"Student ID": student_id, "Command": command, "Semester": semester, "Year": year}), 200
 
     username=current_user.username
     if not verify_student(username):    #verify that the student is logged in
@@ -101,18 +157,29 @@ def create_student_plan_route():
     if not student:
         return jsonify({'Error': 'Student not found'}), 400
     
+    if username != student_id:
+        return jsonify({'Error': 'Unauthorized to view other student\'s course plan'}), 403
+    
     valid_command = ["electives", "easy", "fastest"]
 
     if command in valid_command:
         courses = generator(student, command)
         return jsonify({'Success!': f"{command} plan added to student {student_id} ", "courses" : courses}), 200
+    else:
+        course = get_course_by_courseCode(command)
+        if course==None:
+            return jsonify({'Error': 'Course not found'}), 400
 
-    course = get_course_by_courseCode(command)
-    if course:
-        addCourseToPlan(student, command)
-        return jsonify({'Success!': f"Course {command} added to student {student_id} plan"}), 200
-    
-    return jsonify("Invalid command. Please enter 'electives', 'easy', 'fastest', or a valid course code."), 400
+        offered = course_offered(course.courseCode, semester, year)
+        if not offered:
+            return jsonify({'Error': 'Course not offered in this semester or year'}), 400
+
+        if course and offered:
+            plan = getCoursePlan(student_id, semester, year)
+            message=addCourseToPlan(student, command, plan.semester, plan.year)
+            return jsonify(message), 200
+        else:
+            return jsonify("Invalid command. Please enter 'electives', 'easy', 'fastest', or a valid/offered course code."), 400
 
 ##Get student course history
 @student_views.route('/student/all_course_history', methods=['GET'])
