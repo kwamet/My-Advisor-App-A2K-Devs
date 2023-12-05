@@ -1,4 +1,6 @@
+import json
 from App.models import CoursePlan
+from flask import redirect, url_for
 from App.database import db 
 from App.controllers import (
     get_program_by_id, 
@@ -18,19 +20,33 @@ from App.controllers import (
     programCourses_SortedbyRating,
     programCourses_SortedbyHighestCredits,
     get_all_courses_by_planid,
-    
+    course_offered,
 )
 
 
 
-def create_CoursePlan(id):
-    plan = CoursePlan(id)
+def create_CoursePlan(id, semester, year):
+    plan = CoursePlan(id, semester, year)
     db.session.add(plan)
     db.session.commit()
     return plan
 
-def getCoursePlan(studentid):
-    return CoursePlan.query.filter_by(studentId=studentid).first()
+def getCoursePlan(studentid, semester, year):
+    return CoursePlan.query.filter_by(studentId=studentid, semester=semester, year=year).first()
+
+def getCoursePlanSemester(studentid, semester, year):
+    course_Plan = CoursePlan.query.filter_by(studentId=studentid, semester=semester, year=year).first()
+    if course_Plan:
+        return course_Plan.semester
+    else:
+        return None
+
+def getCoursePlanYear(studentid, semester, year):
+    course_Plan = CoursePlan.query.filter_by(studentId=studentid, semester=semester, year=year).first()
+    if course_Plan:
+        return course_Plan.year
+    else:
+        return None
 
 def possessPrereqs(Student, course):
     preqs = getPrereqCodes(course.courseName)
@@ -40,28 +56,58 @@ def possessPrereqs(Student, course):
             return False
     
     return True
+    
+def appendCourseToPlan(planid, courseCode):
+    plan = CoursePlan.query.filter_by(planId=planid).first()
+    course = get_course_by_courseCode(courseCode)
+    if course and plan:
+        course_info = {
+            'code': courseCode,
+            'name': course.courseName,
+            'credits': course.credits,
+            'rating': course.rating,
+            'prereqs': getPrereqCodes(course.courseName),
+            'semester': course.semester,
+            'year': course.year
+        }
 
-def addCourseToPlan(Student, courseCode):
+        current_courses = json.loads(plan.courses_data) if plan.courses_data else []
+        current_courses.append(course_info)
+        plan.courses_data = json.dumps(current_courses)
+
+        print("Current courses before append:", plan.courses_data)
+        current_courses.append(course_info)
+        plan.courses_data = json.dumps(current_courses)
+        print("Current courses after append:", plan.courses_data)
+
+        db.session.commit()
+    else:
+        if not plan:
+            print("Course plan does not exist")
+        if not course:
+            print("Course does not exist")
+
+
+def addCourseToPlan(Student, courseCode, semester, year):
     course = get_course_by_courseCode(courseCode)
     if course:
-        offered = isCourseOffered(courseCode)
+        offered = course_offered(courseCode, semester, year)
         if offered:
             haveAllpreqs = possessPrereqs(Student, course)
             if haveAllpreqs:
-                plan = getCoursePlan(Student.id)
+                plan = getCoursePlan(Student.id, semester, year)
                 if plan:
-                    createPlanCourse(plan.planId, courseCode)
-                    print("Course successfully added to course plan")
-                    return plan
+                    appendCourseToPlan(plan.planId, courseCode)
+                    return "Course added to plan"
                 else:
-                    plan = create_CoursePlan(Student.id)
-                    createPlanCourse(plan.planId, courseCode)
-                    print("Plan successfully created and Course was successfully added to course plan")
-                    return plan
-        else:
-            print("Course is not offered")
+                    return "Course plan does not exist"                  
+                    #redirect(url_for('create_CoursePlan', studentid=Student.id, semester=course.semester, year=course.year))
+            else:
+                return "Student does not have all the prerequisites"
+        else:   
+            return "Course is not offered"
     else:
-        print("Course does not exist")
+        return "Course does not exist"
 
 
 def removeCourse(Student, courseCode):
@@ -254,13 +300,14 @@ def commandCall(Student, command):
     return courses
 
 
-def generator(Student, command):
+def generator(Student, command, semester, year):
     courses = []
 
-    plan = getCoursePlan(Student.id)
+    plan = getCoursePlan(Student.id, semester, year)
 
     if plan is None:
-        plan = plan = create_CoursePlan(Student.id)
+        print("Plan does not exist. Create a plan first.")
+        #redirect(url_for('create_CoursePlan', studentid=Student.id, semester=1, year=2021))
 
     
     courses = commandCall(Student, command)

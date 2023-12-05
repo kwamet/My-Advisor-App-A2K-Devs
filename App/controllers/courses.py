@@ -39,9 +39,8 @@ def createCoursesfromFile(file_path):
                     prerequisites_codes = row["preReqs"].split(',')
                     semester = int(row["semesterOffered"])
                     year = int(row["yearOffered"])
-
                     course = create_course(courseCode, courseName, rating, credits, prerequisites_codes, semester, year)
-                    print(f"Course Added: {courseName} ({courseCode})")
+                    print(f"Course Added: {courseName} ({courseCode}) semester: {semester} year: {year}")
 
                 except ValueError as e:
                     print(f"Error processing line: {row}. Error: {e}")
@@ -51,6 +50,7 @@ def createCoursesfromFile(file_path):
 
     
 def get_course_by_courseCode(code):
+    #print (Course.query.filter_by(courseCode=code).first())
     return Course.query.filter_by(courseCode=code).first()
 
 def courses_Sorted_byRating():
@@ -78,6 +78,22 @@ def get_credits(code):
 def get_ratings(code):
     course = get_course_by_courseCode(code)
     return course.rating if course else 0
+
+def get_semester(code):
+    course = get_course_by_courseCode(code)
+    return course.semester if course else 0
+
+def get_year(code):
+    course = get_course_by_courseCode(code)
+    return course.year if course else 0
+
+def course_offered(code, semester, year):
+    course = get_course_by_courseCode(code)
+    print(course.courseCode, course.semester, course.year)
+    if course:
+        if course.semester == semester and course.year == year:
+            return True
+    return False
 
 
 
