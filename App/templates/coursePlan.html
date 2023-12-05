@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to right, #5c258d, #4389a2);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        form {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course Plan</h1>
+
+    <!-- Three buttons: "Fastest Graduation," "Easy Courses," and "Prioritize Electives" -->
+    <form action="{{ url_for('generate_course_plan') }}" method="post">
+        {{ csrf_token }}
+        <button type="submit" name="plan_type" value="fastest_graduation">Fastest Graduation</button>
+        <button type="submit" name="plan_type" value="easy_courses">Easy Courses</button>
+        <button type="submit" name="plan_type" value="prioritize_electives">Prioritize Electives</button>
+    </form>
+
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.courseCode }} - {{ course.courseName }}
+                <!-- Add the "Add to Course History" button with a form -->
+                <form action="{{ url_for('add_to_course_history', course_code=course.courseCode) }}" method="post">
+                    {{ csrf_token }}
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('login') }}">Logout</a>
+</body>
+</html>
