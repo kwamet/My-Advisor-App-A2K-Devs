@@ -249,7 +249,7 @@ def create_app(config_overrides={}):
         """
 
         # Render the appropriate template for the generated course plan
-        return render_template('generated_course_plan.html')
+        return render_template('coursePlan.html')
     
 
     app.app_context().push()
